@@ -1,0 +1,29 @@
+.project-tile {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.5s;
+}
+
+.project-tile:hover {
+  filter: brightness(50%);
+}
+
+.project-tile-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.project-tile:hover .project-tile-content {
+  opacity: 1;
+}

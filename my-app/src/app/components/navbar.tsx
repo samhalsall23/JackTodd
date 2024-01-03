@@ -8,21 +8,21 @@ export default function Navbar() {
     <nav className="navbar">
       <ul>
         <li>
-          <Link href="/About">
+          <Link href="/about">
             <h1>
               ABOUT <ArrowUpRight />
             </h1>
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/projects">
             <h1>
               PROJECTS <ArrowUpRight />
             </h1>
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/contact">
             <h1>
               LET&apos;S WORK TOGETHER <ArrowUpRight />
             </h1>
