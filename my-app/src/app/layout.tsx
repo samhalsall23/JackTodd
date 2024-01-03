@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
-// layout.tsx
-import "./globals.scss";
 import Navbar from "./components/navbar";
+// import React, { Suspense } from "react";
+
+// const Navbar = React.lazy(() => import("./components/navbar"));
 
 const inter = Inter({ subsets: ["latin"] });
 
