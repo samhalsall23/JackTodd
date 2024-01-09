@@ -11,7 +11,15 @@ export default function ProjectTile() {
     <div
       className="project-tile"
       style={{
-        backgroundImage: `url(https://fastly.picsum.photos/id/828/200/200.jpg?hmac=XDYHUvU1Ha9LQrkNk3svII_91vwnQqo8C0yWMqCt6V8)`,
+        backgroundImage: `url(https://images.pexels.com/photos/19644201/pexels-photo-19644201/free-photo-of-close-up-of-a-jar-of-cream.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`,
+        position: 'absolute', 
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        width: '100%', 
+        height: '100%', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
       }}
     >
       <div className="project-tile-content">
