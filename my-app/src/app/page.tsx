@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ProjectTile from "./components/ProjectTile";
 
 import projects from "./data/projects.json";
@@ -19,7 +19,12 @@ export default function Page() {
           alt="logo"
           style={{ width: "50%", height: "auto" }}
         />
-        <p style={{ textAlign: "center", fontSize: "20px" }}>
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: "28px",
+          }}
+        >
           Multi-media graphic designer specialising in publication design,
           branding and advertising
         </p>
@@ -32,6 +37,7 @@ export default function Page() {
           justifyContent: "center",
           width: "90%",
           margin: "0 auto",
+          marginBottom: "60px",
         }}
         className="outer"
       >
