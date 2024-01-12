@@ -1,10 +1,30 @@
 .navbar {
-  ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-  }
-  li {
-    padding: 50px;
-  }
+  position: sticky;
+  background-color: black;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: auto;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+li {
+  padding: 30px 50px; // No vertical padding, 50px horizontal padding
 }

@@ -1,55 +1,37 @@
 import React from "react";
 import ProjectTile from "./components/ProjectTile";
 
+import { ArrowDownShort } from "react-bootstrap-icons";
+
 import projects from "./data/projects.json";
+
+import "./page.scss";
 
 export default function Page() {
   return (
     <main>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginBottom: "60px",
-        }}
-      >
+      <div className="hero-content">
         <img
+          className="hero-logo"
           src="https://i.ibb.co/xDGBhH7/WHITELOGO-jack.png"
           alt="logo"
-          style={{ width: "50%", height: "auto" }}
         />
-        <p
-          style={{
-            textAlign: "center",
-            fontSize: "28px",
-          }}
-        >
-          Multi-media graphic designer specialising in publication design,
-          branding and advertising
-        </p>
+        <div className="hero-text">
+          <p>
+            Multi-media graphic designer specialising in publication design,
+            branding and advertising
+          </p>
+        </div>
+        <div className="work-together">
+          <p>LET'S WORK TOGETHER</p>
+        </div>
+        <div className="arrow-down">
+          <ArrowDownShort style={{ width: "200px" }} />
+        </div>
       </div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "1px",
-          justifyContent: "center",
-          width: "90%",
-          margin: "0 auto",
-          marginBottom: "60px",
-        }}
-        className="outer"
-      >
+      <div className="project-grid">
         {projects.map((project) => (
-          <div
-            style={{
-              backgroundColor: "#F0F0F0",
-              paddingBottom: "100%",
-              position: "relative",
-            }}
-            key={project.id}
-          >
+          <div className="project-tile-outer" key={project.id}>
             <ProjectTile image={project.image} title={project.title} />
           </div>
         ))}
