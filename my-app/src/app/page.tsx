@@ -13,7 +13,7 @@ export default function Page() {
       <div className="hero-content">
         <img
           className="hero-logo"
-          src="https://i.ibb.co/xDGBhH7/WHITELOGO-jack.png"
+          src="assets\logo\WHITELOGO-jack.png"
           alt="logo"
         />
         <div className="hero-text">

@@ -8,17 +8,21 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 60px;
+  justify-content: space-evenly; // Add this line
+
   p {
     text-align: center;
     font-size: 28px;
   }
   .hero-logo {
+    margin-top: 150px;
     width: 70%;
     height: auto;
   }
   .hero-text {
-    width: 800px; // Set the width as needed
+    max-width: 800px; // Set the max-width as needed
     margin: auto; // Centers the block horizontally
+    margin-top: 100px;
     margin-bottom: 30px;
   }
   .work-together {
