@@ -1,4 +1,9 @@
 .hero-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; // Adjust as needed
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,12 +43,16 @@
 }
 
 .project-grid {
+  position: relative;
+  z-index: 1;
+  margin-top: calc(
+    100vh - 90px
+  ); // This should be the same as the height of .hero-content
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   justify-content: center;
   width: 100%;
-  margin: 0 auto;
   margin-bottom: 60px;
 }
 .project-tile-outer {

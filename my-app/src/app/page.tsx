@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectTile from "./components/ProjectTile";
 
-import { ArrowDownShort } from "react-bootstrap-icons";
+import { ChevronDown } from "react-bootstrap-icons";
 
 import projects from "./data/projects.json";
 
@@ -26,7 +26,7 @@ export default function Page() {
           <p>LET'S WORK TOGETHER</p>
         </div>
         <div className="arrow-down">
-          <ArrowDownShort style={{ width: "200px" }} />
+          <ChevronDown size={50} />
         </div>
       </div>
       <div className="project-grid">
