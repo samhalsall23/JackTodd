@@ -1,12 +1,20 @@
+"use client";
+
 import React from "react";
+import { useRouter } from "next/navigation";
 import "../styles/ProjectTile.scss";
 
 interface ProjectTileProps {
   image: string;
   title: string;
+  id: string;
 }
 
-export default function ProjectTile({ image, title }: ProjectTileProps) {
+export default function ProjectTile({ image, title, id }: ProjectTileProps) {
+  const router = useRouter();
+  const onProjectTileClick = () => {
+    router.push(`/projects/${id}`);
+  };
   return (
     <div
       className="project-tile"
@@ -21,6 +29,7 @@ export default function ProjectTile({ image, title }: ProjectTileProps) {
         alignItems: "center",
         justifyContent: "center",
       }}
+      onClick={onProjectTileClick}
     >
       <div className="project-tile-content">
         <h1>{title}</h1>

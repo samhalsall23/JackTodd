@@ -32,7 +32,11 @@ export default function Page() {
       <div className="project-grid">
         {projects.map((project) => (
           <div className="project-tile-outer" key={project.id}>
-            <ProjectTile image={project.image} title={project.title} />
+            <ProjectTile
+              image={project.image}
+              title={project.title}
+              id={project.id}
+            />
           </div>
         ))}
       </div>
