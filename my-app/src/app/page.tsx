@@ -33,7 +33,7 @@ export default function Page() {
         {projects.map((project) => (
           <div className="project-tile-outer" key={project.id}>
             <ProjectTile
-              image={project.image}
+              imageSquare={project.imageSquare}
               title={project.title}
               id={project.id}
             />

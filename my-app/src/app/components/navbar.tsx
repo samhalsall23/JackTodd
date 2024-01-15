@@ -1,11 +1,15 @@
 // components/Navbar.tsx
+"use client";
 import Link from "next/link";
 import "../styles/Navbar.scss";
 import { ArrowUpRight } from "react-bootstrap-icons";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isProjectsPage = pathname.includes("/projects");
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isProjectsPage ? "transparent" : ""}`}>
       <div className="navbar-content">
         <img
           className="navbar-logo"

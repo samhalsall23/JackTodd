@@ -1,5 +1,4 @@
 import ProjectPageContent from "../../components/ProjectPageContent";
-import Image from "next/image";
 
 export default function ProjectPage({
   params: { id },
@@ -10,9 +9,14 @@ export default function ProjectPage({
     <>
       <div className="hero-image">
         <img
-          src="https://images.unsplash.com/photo-1615003162333-d3ff3ce1f0f4?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dWx0cmElMjB3aWRlfGVufDB8fDB8fHww"
+          src="/assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png"
           alt="Hero Image"
-          style={{ position: "relative", width: "100%", height: "auto" }}
+          style={{
+            position: "absolute",
+            top: "0",
+            width: "100%",
+            height: "auto",
+          }}
         />
       </div>
       <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>

@@ -5,12 +5,16 @@ import { useRouter } from "next/navigation";
 import "../styles/ProjectTile.scss";
 
 interface ProjectTileProps {
-  image: string;
+  imageSquare: string;
   title: string;
   id: string;
 }
 
-export default function ProjectTile({ image, title, id }: ProjectTileProps) {
+export default function ProjectTile({
+  imageSquare,
+  title,
+  id,
+}: ProjectTileProps) {
   const router = useRouter();
   const onProjectTileClick = () => {
     router.push(`/projects/${id}`);
@@ -19,7 +23,7 @@ export default function ProjectTile({ image, title, id }: ProjectTileProps) {
     <div
       className="project-tile"
       style={{
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url(${imageSquare})`,
         position: "absolute",
         backgroundSize: "cover",
         backgroundPosition: "center",

@@ -2,37 +2,78 @@
   {
     "id": "1-ora",
     "title": "The Offroad Adventure Show e-Magazine",
-    "image": "assets/projects/SQUARE.png",
-    "description": "This e-magazine was created to be a direct reflection of the Chanel 10 TV series ‘The Offroad Adventure Show’. The series follows a crew of 4WDers who explore Australia traversing some of its toughest and most unforgiving destinations. I was fortunate enough to be able to design and publish issue #2, issue #3, and issue #4 of the season 8 editions of the e-magazine. Each issue was roughly 80 pages long. For these e-magazines, I was supplied with copy, images, and video clips, and given complete freedom to layout all elements in a way that guided the reader from beginning to end. Important considerations I had to abide by during this process were making sure that the layout of the elements did justice to the story being told, and that the design was consistent with the branding of the show and previous magazines. To accompany the magazines, I created a collateral of promotional material that was used to promote the publications through EDMS and social media."
+    "imageSquare": "/assets/projects/ORA-SQUARE.png",
+    "imageWide": "/assets/projects/WIDE.png",
+    "description": "This e-magazine was created to be a direct reflection of the Chanel 10 TV series ‘The Offroad Adventure Show’. The series follows a crew of 4WDers who explore Australia traversing some of its toughest and most unforgiving destinations. I was fortunate enough to be able to design and publish issue #2, issue #3, and issue #4 of the season 8 editions of the e-magazine. Each issue was roughly 80 pages long. \n\n For these e-magazines, I was supplied with copy, images, and video clips, and given complete freedom to layout all elements in a way that guided the reader from beginning to end. Important considerations I had to abide by during this process were making sure that the layout of the elements did justice to the story being told, and that the design was consistent with the branding of the show and previous magazines. \n\n To accompany the magazines, I created a collateral of promotional material that was used to promote the publications through EDMS and social media."
   },
   {
-    "id": "02",
-    "title": "Title 2",
-    "image": "https://images.pexels.com/photos/19644201/pexels-photo-19644201/free-photo-of-close-up-of-a-jar-of-cream.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "id": "2-imagemaker",
+    "title": "Imagemaker Print Studio",
+    "imageSquare": "/assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "/assets/projects/2-imagemaker/IMAGEMAKER-WIDE.pngg",
+    "description": "A new Melbourne-based fine art and photography printing company approached me with a branding opportunity. This was primarily a logo design, with a focus on a versatile brand mark. \n\n For the primary logo, we used a typography-based design with an emphasis on strength and trust. These concepts are conveyed through the tight kerning of the lettering, as well as the bold yet sharp nature of the font. \n\n For the brand mark, we used a camera shutter vector as a reference back to the nature of the business; a fine art and photography printing service. As the primary logo is wider, this icon is a more versatile option for certain contexts that may not be ideal for the text logo."
+  },
+  {
+    "id": "3-imagemaker",
+    "title": "Imagemaker",
+    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": "03",
-    "title": "Title 3",
-    "image": "https://images.pexels.com/photos/19644201/pexels-photo-19644201/free-photo-of-close-up-of-a-jar-of-cream.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "id": "4-imagemaker",
+    "title": "Imagemaker",
+    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": "04",
-    "title": "Title 4",
-    "image": "https://images.pexels.com/photos/19644201/pexels-photo-19644201/free-photo-of-close-up-of-a-jar-of-cream.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "id": "5-imagemaker",
+    "title": "Imagemaker",
+    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": "05",
-    "title": "Title 5",
-    "image": "https://images.pexels.com/photos/19644201/pexels-photo-19644201/free-photo-of-close-up-of-a-jar-of-cream.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "id": "6-imagemaker",
+    "title": "Imagemaker",
+    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": "06",
-    "title": "Title 6",
-    "image": "https://images.pexels.com/photos/19644201/pexels-photo-19644201/free-photo-of-close-up-of-a-jar-of-cream.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "id": "7-imagemaker",
+    "title": "Imagemaker",
+    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": "8-imagemaker",
+    "title": "Imagemaker",
+    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": "9-imagemaker",
+    "title": "Imagemaker",
+    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": "10-imagemaker",
+    "title": "Imagemaker",
+    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": "11-imagemaker",
+    "title": "Imagemaker",
+    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   }
 ]
