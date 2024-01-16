@@ -53,7 +53,7 @@
   position: relative;
   z-index: 1;
   margin-top: calc(
-    100vh + 90px
+    100vh - 90px
   ); // This should be the same as the height of .hero-content
   display: grid;
   justify-content: center;
