@@ -23,7 +23,6 @@ export default function Navbar() {
   );
   // Get the color value of the current project, or default to a fallback color
   const backgroundColor = currentProject ? currentProject.color : "black";
-  console.log(isLight(backgroundColor));
   const color = isLight(backgroundColor) ? "black" : "white";
 
   //icon show
