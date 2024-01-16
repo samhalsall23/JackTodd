@@ -7,20 +7,28 @@ export default function ProjectPage({
 }) {
   return (
     <>
-      <div className="hero-image">
-        <img
-          src="/assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png"
-          alt="Hero Image"
+      <div>
+        <div className="hero-image">
+          <img
+            src="/assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png"
+            alt="Hero Image"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+          />
+        </div>
+        <div
           style={{
-            position: "absolute",
-            top: "0",
+            position: "fixed",
+            marginTop: "20px",
+            display: "flex",
+            justifyContent: "center",
             width: "100%",
-            height: "auto",
           }}
-        />
-      </div>
-      <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-        <ProjectPageContent id={id} />
+        >
+          <ProjectPageContent id={id} />
+        </div>
       </div>
     </>
   );

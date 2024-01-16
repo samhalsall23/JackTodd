@@ -13,8 +13,15 @@ export default function ProjectPageContent({ id }: { id: string }) {
 
   return (
     <>
-      <div style={{ width: "75%", display: "block", textAlign: "center" }}>
+      <div
+        style={{
+          width: "75%",
+          display: "block",
+          textAlign: "center",
+        }}
+      >
         <h1>{project.title}</h1>
+        <br />
         <div>
           {typeof project.description === "string" &&
             project.description.split("\n").map((line, index) => (

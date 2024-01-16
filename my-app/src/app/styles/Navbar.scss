@@ -4,10 +4,6 @@
   top: 0;
   z-index: 1000;
 }
-.transparent {
-  background-color: transparent !important;
-  color: black !important;
-}
 
 .navbar-content {
   display: flex;
@@ -15,11 +11,17 @@
   align-items: center;
 }
 
+.navbar-logo-wrapper {
+  cursor: pointer;
+}
+
 .navbar-logo {
-  margin-left: 20px;
+  margin: 15px;
+  margin-left: 30px;
+  margin-right: 40px;
   display: flex;
   align-items: center;
-  width: 50px;
+  width: 100px;
   height: auto;
 }
 

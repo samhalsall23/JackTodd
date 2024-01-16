@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import ProjectTile from "./components/ProjectTile";
 
@@ -8,6 +9,14 @@ import projects from "./data/projects.json";
 import "./page.scss";
 
 export default function Page() {
+  const handleScrollDownClick = () => {
+    window.scrollBy({
+      top: window.innerHeight, // This scrolls down by 100vh
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <main>
       <div className="hero-content">
@@ -22,10 +31,10 @@ export default function Page() {
             branding and advertising
           </p>
         </div>
-        <div className="work-together">
+        <div className="work-together" onClick={handleScrollDownClick}>
           <p>LET'S WORK TOGETHER</p>
         </div>
-        <div className="arrow-down">
+        <div className="arrow-down" onClick={handleScrollDownClick}>
           <ChevronDown size={50} />
         </div>
       </div>
