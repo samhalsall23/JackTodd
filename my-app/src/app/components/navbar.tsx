@@ -80,6 +80,7 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
+        <div className="sidebar-wrapper">Test</div>
       </div>
     </nav>
   );

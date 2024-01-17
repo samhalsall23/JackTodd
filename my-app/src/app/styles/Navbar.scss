@@ -5,48 +5,58 @@
   background-color: black;
   top: 0;
   z-index: 1000;
-}
 
-.navbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-logo-wrapper {
-  cursor: pointer;
-}
-
-.navbar-logo {
-  margin: 15px;
-  margin-left: 30px;
-  margin-right: 40px;
-  display: flex;
-  align-items: center;
-  width: 100px;
-  height: auto;
-}
-
-.navbar-list-wrapper {
-  @media (min-width: map-get($breakpoints, md)) {
+  .navbar-content {
     display: flex;
-  }
-  display: none;
-  ul {
-    justify-content: flex-end;
-    list-style: none;
-  }
+    justify-content: space-between;
+    align-items: center;
 
-  li {
-    display: inline-block;
-    padding: 30px 50px; // No vertical padding, 50px horizontal padding
-  }
+    .navbar-logo-wrapper {
+      cursor: pointer;
+      display: flex;
+      justify-content: center; // This will center the logo by default
 
-  a {
-    text-decoration: none;
-    color: inherit;
-    &:hover {
-      color: #8771f4;
+      .navbar-logo {
+        margin: 15px;
+        margin-left: 30px;
+        margin-right: 40px;
+        width: 100px;
+        // height: auto;
+      }
+
+      @media (max-width: map-get($breakpoints, md)) {
+        position: absolute; // This will take the logo out of the normal flow
+        left: 50%; // This will move the logo to the middle
+        transform: translateX(-50%); // This will center the logo
+      }
+    }
+
+    .navbar-list-wrapper {
+      @media (min-width: map-get($breakpoints, md)) {
+        display: flex;
+      }
+      display: none;
+      ul {
+        justify-content: flex-end;
+        list-style: none;
+      }
+      li {
+        display: inline-block;
+        padding: 30px 50px; // No vertical padding, 50px horizontal padding
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+          color: #8771f4;
+        }
+      }
+    }
+  }
+  .sidebar-wrapper {
+    display: flex;
+    @media (min-width: map-get($breakpoints, md)) {
+      display: none;
     }
   }
 }
