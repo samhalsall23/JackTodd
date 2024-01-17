@@ -64,7 +64,7 @@ export default function Navbar() {
         ) : (
           <div />
         )}{" "}
-        <ul>
+        <ul className="navbar-list-wrapper">
           <li>
             <Link href="/about">
               <h1>

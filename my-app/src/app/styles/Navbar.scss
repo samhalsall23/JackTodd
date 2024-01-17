@@ -1,3 +1,5 @@
+@import "../utils/breakpoints.scss";
+
 .navbar {
   position: sticky;
   background-color: black;
@@ -25,21 +27,26 @@
   height: auto;
 }
 
-ul {
-  display: flex;
-  justify-content: flex-end;
-  list-style: none;
-}
+.navbar-list-wrapper {
+  @media (min-width: map-get($breakpoints, md)) {
+    display: flex;
+  }
+  display: none;
+  ul {
+    justify-content: flex-end;
+    list-style: none;
+  }
 
-li {
-  display: inline-block;
-  padding: 30px 50px; // No vertical padding, 50px horizontal padding
-}
+  li {
+    display: inline-block;
+    padding: 30px 50px; // No vertical padding, 50px horizontal padding
+  }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  &:hover {
-    color: #8771f4;
+  a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      color: #8771f4;
+    }
   }
 }

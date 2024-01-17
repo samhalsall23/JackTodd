@@ -17,8 +17,12 @@
   }
   .hero-logo {
     margin-top: 120px;
-    width: 50%;
+    width: 75%;
     height: auto;
+    @media (min-width: map-get($breakpoints, md)) {
+      /* At the xs breakpoint, the grid has 1 column */
+      width: 50%;
+    }
   }
   .hero-text {
     max-width: 800px; // Set the max-width as needed
