@@ -5,11 +5,13 @@
   background-color: black;
   top: 0;
   z-index: 1000;
+  min-height: 90px;
 
   .navbar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 90px;
 
     .navbar-logo-wrapper {
       cursor: pointer;
@@ -55,6 +57,9 @@
   }
   .sidebar-wrapper {
     display: flex;
+    position: absolute;
+    right: 18px;
+    // align-items: end;
     @media (min-width: map-get($breakpoints, md)) {
       display: none;
     }

@@ -2,11 +2,12 @@
 "use client";
 import Link from "next/link";
 import "../styles/Navbar.scss";
-import { ArrowUpRight } from "react-bootstrap-icons";
+import { ArrowUpRight, List } from "react-bootstrap-icons";
 import { usePathname } from "next/navigation";
 import projects from "../data/projects.json";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+// import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 
 // Function to determine if a color is light or dark
 function isLight(color) {
@@ -27,6 +28,7 @@ export default function Navbar() {
 
   //icon show
   const [showIcon, setShowIcon] = useState(false); // State to control the visibility of the icon
+  const [showSidebar, setShowSidebar] = useState(false); // State to control the visibility of the sidebar
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,7 +82,9 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
-        <div className="sidebar-wrapper">Test</div>
+        <div className="sidebar-wrapper">
+          <List width={40} height={40} />
+        </div>
       </div>
     </nav>
   );
