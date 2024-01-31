@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import Navbar from "./components/navbar";
+import Sidebar from "./components/Sidebar";
 // import React, { Suspense } from "react";
 
 // const Navbar = React.lazy(() => import("./components/navbar"));

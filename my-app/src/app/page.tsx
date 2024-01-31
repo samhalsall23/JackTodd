@@ -11,7 +11,7 @@ import "./page.scss";
 export default function Page() {
   const handleScrollDownClick = () => {
     window.scrollBy({
-      top: window.innerHeight, // This scrolls down by 100vh
+      top: window.innerHeight - 90, // This scrolls down by 100vh
       left: 0,
       behavior: "smooth",
     });
