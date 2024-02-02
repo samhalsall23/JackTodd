@@ -1,0 +1,49 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 450px;
+  margin: auto;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .hero-logo {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .submit-button {
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #dddddd;
+    border: 1px solid #ddddddbf;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background-color: #ddddddbf;
+    }
+  }
+
+  form {
+    width: 100%;
+  }
+
+  label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  input,
+  textarea {
+    font-size: 18px;
+    margin-bottom: 20px;
+    border: 2px solid #dddddd;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}

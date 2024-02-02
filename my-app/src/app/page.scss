@@ -74,7 +74,7 @@
     /* At the xs breakpoint, the grid has 1 column */
     grid-template-columns: repeat(2, 1fr);
   }
-  @media (min-width: map-get($breakpoints, sm)) {
+  @media (min-width: map-get($breakpoints, md)) {
     /* At the sm breakpoint, the grid has 2 columns */
     grid-template-columns: repeat(3, 1fr);
   }
