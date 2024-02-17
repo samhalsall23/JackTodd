@@ -1,9 +1,10 @@
 @import "utils/breakpoints.scss";
+
 .hero-content {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: calc(100% - 17px); // Subtract scrollbar width
   min-height: 100vh; // Adjust as needed
   display: flex;
   flex-direction: column;
@@ -14,7 +15,7 @@
   p {
     text-align: center;
     font-size: 24px;
-    @media (min-width: map-get($breakpoints, xs)) {
+    @media (min-width: map-get($breakpoints, md)) {
       font-size: 28px;
     }
   }
@@ -83,6 +84,7 @@
   background-color: #f0f0f0;
   padding-bottom: 100%;
   position: relative;
+  border: 1px solid black; // Adjust as needed
 }
 
 // not mine

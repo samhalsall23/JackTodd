@@ -96,7 +96,7 @@ export default function Navbar() {
             <div className="navbar-logo-wrapper" onClick={onLogoClick}>
               <img
                 className="navbar-logo"
-                src="https://i.ibb.co/xDGBhH7/WHITELOGO-jack.png"
+                src="assets\logo\WHITELOGO-jack.png"
                 alt="logo"
               />
             </div>

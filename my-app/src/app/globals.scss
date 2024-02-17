@@ -1,3 +1,8 @@
+// SCSS VARIABLES
+$primary-color: black;
+$secondary-color: #f0f0f0;
+$special-color: #a67c00;
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -90,6 +95,7 @@ body {
   // color: rgb(var(--foreground-rgb));
   color: white;
   background: black;
+  font-family: var(--font-mono);
   // background: linear-gradient(
   //     to bottom,
   //     transparent,
