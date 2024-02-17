@@ -1,4 +1,5 @@
 @import "utils/breakpoints.scss";
+@import "globals.scss";
 
 .hero-content {
   position: fixed;
@@ -52,12 +53,18 @@
     p {
       font-weight: bolder;
     }
+    &:hover {
+      background-color: $special-color;
+    }
   }
   .arrow-down {
     width: 300px;
     display: flex;
     justify-content: center;
     cursor: pointer;
+    &:hover {
+      color: $special-color;
+    }
   }
 }
 

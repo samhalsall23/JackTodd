@@ -32,7 +32,7 @@ export default function Page() {
           </p>
         </div>
         <div className="work-together" onClick={handleScrollDownClick}>
-          <p>LET'S WORK TOGETHER</p>
+          <p>VIEW MY PROJECTS</p>
         </div>
         <div className="arrow-down" onClick={handleScrollDownClick}>
           <ChevronDown size={50} />

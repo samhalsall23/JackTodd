@@ -68,17 +68,19 @@ const Sidebar = ({
     return (
       <Collapse in={expand} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          {projects.map((project) => (
-            <ListItemButton
-              onClick={(event) => onProjectClick({ id: project.id }, event)}
-            >
-              <ListItemText
-                primary={project.title}
-                primaryTypographyProps={{
-                  style: { color: "white", fontSize: "16px" },
-                }}
-              />
-            </ListItemButton>
+          {projects.map((project, index) => (
+            <div key={index}>
+              <ListItemButton
+                onClick={(event) => onProjectClick({ id: project.id }, event)}
+              >
+                <ListItemText
+                  primary={project.title}
+                  primaryTypographyProps={{
+                    style: { color: "white", fontSize: "16px" },
+                  }}
+                />
+              </ListItemButton>
+            </div>
           ))}
         </List>
       </Collapse>

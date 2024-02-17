@@ -1,8 +1,101 @@
+@import "../utils/breakpoints.scss";
+@import "../globals.scss";
+.content {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.main-contact-page {
+  display: flex;
+  flex-direction: row;
+  @media (max-width: map-get($breakpoints, md)) {
+    flex-direction: column;
+  }
+  width: 100%;
+}
+
+.left-section {
+  width: 65%;
+  @media (max-width: map-get($breakpoints, md)) {
+    width: 100%;
+  }
+}
+.right-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: start;
+  margin-left: 100px;
+  width: 35%;
+  @media (max-width: map-get($breakpoints, md)) {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+.contact-info {
+  min-width: 300px;
+  @media (max-width: map-get($breakpoints, md)) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Creates 3 columns
+    grid-gap: 40px; // Adjust as needed
+    justify-content: space-between;
+    width: 100%;
+  }
+  @media (max-width: map-get($breakpoints, sm)) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Creates 3 columns
+    grid-gap: 20px;
+  }
+  @media (max-width: 500px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); // Creates 3 columns
+    grid-gap: 0px;
+  }
+}
+.contact-header {
+  width: 60%;
+  @media (max-width: map-get($breakpoints, md)) {
+    width: 100%;
+  }
+  margin-bottom: 30px;
+  h1 {
+    font-size: 70px;
+    @media (max-width: map-get($breakpoints, sm)) {
+      font-size: 50px;
+    }
+    @media (max-width: map-get($breakpoints, xs)) {
+      font-size: 40px;
+    }
+  }
+}
+
+.contact-info-tile-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+  h2 {
+    margin-left: 16px;
+  }
+}
+.contact-info-tile-details {
+  p {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+  hr {
+    border-top: 1px solid white;
+    width: 100%;
+    margin-bottom: 24px;
+    // @media (max-width: map-get($breakpoints, sm)) {
+    //   width: 300px;
+    // }
+  }
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 450px;
+  width: 100%;
   margin: auto;
 
   .form-group {
@@ -10,22 +103,22 @@
     flex-direction: column;
     align-items: start;
   }
-  .hero-logo {
-    width: 100%;
-    margin-bottom: 30px;
-  }
   .submit-button {
+    font-family: var(
+      --font-mono
+    ); /* or whichever global font variable you want to use */
     margin-top: 15px;
+    margin-bottom: 20px;
     width: 100%;
     border-radius: 10px;
-    background-color: #dddddd;
-    border: 1px solid #ddddddbf;
+    background-color: #ebe9e9cd;
+    border: 1px solid #6d6969d3;
     padding: 10px;
     font-size: 20px;
     cursor: pointer;
     transition: 0.3s;
     &:hover {
-      background-color: #ddddddbf;
+      background-color: $special-color;
     }
   }
 
@@ -39,6 +132,7 @@
   }
   input,
   textarea {
+    background-color: white;
     font-size: 18px;
     margin-bottom: 20px;
     border: 2px solid #dddddd;
