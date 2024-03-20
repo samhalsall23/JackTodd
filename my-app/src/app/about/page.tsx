@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,69 +10,76 @@ import ProjectTile from "../components/ProjectTile";
 
 import "../styles/Slider.scss";
 
-// Custom arrow components
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
-      onClick={onClick}
-    />
-  );
-}
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+
+// Next Arrow
+const NextArrow = ({ onClick }: { onClick: () => void }) => {
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
-      onClick={onClick}
-    />
+    <button className="arrow-button-left" onClick={onClick}>
+      <ArrowForwardIosIcon />
+    </button>
   );
-}
+};
+
+// Previous Arrow
+const PrevArrow = ({ onClick }: { onClick: () => void }) => {
+  return (
+    <button className="arrow-button-right" onClick={onClick}>
+      <ArrowBackIosIcon />
+    </button>
+  );
+};
 
 export default function About() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+  const slider = React.useRef<Carousel>(null);
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
   };
 
   return (
-    <>
-      <h1>Hi</h1>
-      <div
-        style={{
-          width: "50%",
-          marginRight: "auto",
-          marginLeft: "auto",
-          height: "100vh",
-        }}
-      >
-        <Slider {...settings}>
-          {projects.map((project, index) => (
-            <div key={index} style={{ height: "300px" }}>
-              {/* <ProjectTile
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <PrevArrow onClick={() => slider?.current?.previous(1)} />
+      <Carousel responsive={responsive} arrows={false} ref={slider}>
+        {projects.map((project, index) => {
+          return (
+            <div
+              style={{
+                height: "300px",
+                width: "auto",
+                border: "solid 2px black",
+              }}
+            >
+              <ProjectTile
+                key={index}
                 imageSquare={project.imageSquare}
                 title={project.title}
                 id={project.id}
-              /> */}
-              {/* <h2 style={{ display: "flex" }}>test</h2> */}
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTSNd2Kw-8bYucGejJ_t5CmYGwePCZF9LVw3Gm6OMAdQ&s"
-                alt="test"
-              ></img>
+              />
             </div>
-          ))}
-        </Slider>
-      </div>
-    </>
+          );
+        })}
+      </Carousel>
+      <NextArrow onClick={() => slider?.current?.next(1)} />
+    </div>
   );
 }
