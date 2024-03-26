@@ -41,7 +41,6 @@ export default function Contact() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log({ name, email, message });
   };
   return (
     <main className="content">

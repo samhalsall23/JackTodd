@@ -1,5 +1,6 @@
 [
   {
+    "index": 0,
     "id": "1-ora",
     "title": "The Offroad Adventure Show e-Magazine",
     "imageSquare": "/assets/projects/ORA-SQUARE.png",
@@ -8,6 +9,7 @@
     "color": "#FFFFFF"
   },
   {
+    "index": 1,
     "id": "2-imagemaker",
     "title": "Imagemaker Print Studio",
     "imageSquare": "/assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
@@ -16,6 +18,7 @@
     "color": "#FFFFFF"
   },
   {
+    "index": 2,
     "id": "3-taituivasa",
     "title": "Tai Tuivasa Merchandise Design",
     "imageSquare": "/assets/projects/3-taituivasa/taituivasa-square.png",
@@ -24,22 +27,25 @@
     "color": "#FFFFFF"
   },
   {
+    "index": 3,
     "id": "4-royalbotanicgardens",
     "title": "Royal Botanic Gardens Annual Report",
-    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
-    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
+    "imageSquare": "/assets/projects/4-royalbotanicgardens/IMAGEMAKER-SQUARE.png",
+    "imageWide": "/assets/projects/4-royalbotanicgardens/IMAGEMAKER-WIDE.png",
     "description": "This Annual Report aims to juxtapose the exquisite charm of the Royal Botanical Gardens with the typically mundane nature of an annual report. The black-and-white visuals deliberately contrast with the vibrant, real-life spectacle of the gardens, symbolizing the presentation of business data and information. \n\nThroughout the document, the inclusion of full-page photographs serves as a breathing point for readers amidst the information-heavy content. This is a project I completed in 2019, and is what founded my passion for publication and layout design.",
     "color": "#FFFFFF"
   },
   {
+    "index": 4,
     "id": "5-melbournecomedyfestival",
     "title": "Melbourne Comedy Festival Poster",
-    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
-    "imageWide": "assets/projects/5-melbournecomedyfestival/comedyfestival-wide.png",
+    "imageSquare": "/assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "/assets/projects/5-melbournecomedyfestival/comedyfestival-wide.png",
     "description": "With the aim of highlighting and refining our typographic expertise, I undertook the challenge of crafting a poster for the Melbourne Comedy Festival. The objective was to capture the lively and cheerful essence of the event. The unconventional, curved lines and the layered arrangement of the lettering effectively fulfill this mandate, ensuring a design that not only aligns with the festivity but also maintains readability.",
     "color": "#FFFFFF"
   },
   {
+    "index": 5,
     "id": "6-downunderjourney",
     "title": "What’s Up Downunder Journey e-Magazine",
     "imageSquare": "/assets/projects/6-downunderjourney/journey-square.png",
@@ -48,26 +54,29 @@
     "color": "#FFFFFF"
   },
   {
+    "index": 6,
     "id": "7-imagemaker",
     "title": "Imagemaker",
-    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
-    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
+    "imageSquare": "/assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "/assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "color": "#FFFFFF"
   },
   {
+    "index": 7,
     "id": "8-imagemaker",
     "title": "Imagemaker",
-    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
-    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
+    "imageSquare": "/assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "/assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "color": "#FFFFFF"
   },
   {
+    "index": 8,
     "id": "9-imagemaker",
     "title": "Imagemaker",
-    "imageSquare": "assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
-    "imageWide": "assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
+    "imageSquare": "/assets/projects/2-imagemaker/IMAGEMAKER-SQUARE.png",
+    "imageWide": "/assets/projects/2-imagemaker/IMAGEMAKER-WIDE.png",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "color": "#FFFFFF"
   }

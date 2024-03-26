@@ -3,10 +3,15 @@
 
 .navbar {
   position: sticky;
-  background-color: black;
+  background: radial-gradient(
+    circle at 24.1% 68.8%,
+    rgb(25, 25, 25) 0%,
+    rgb(0, 0, 0) 99.4%
+  );
   top: 0;
   z-index: 1000;
   min-height: 90px;
+  box-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.103); // white box shadow
 
   .navbar-content {
     display: flex;
@@ -46,12 +51,21 @@
       li {
         display: inline-block;
         padding: 30px 50px; // No vertical padding, 50px horizontal padding
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-        &:hover {
-          color: $special-color;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+
+          span {
+            display: inline-block;
+            transition: all 0.3s ease; // animate all changes
+
+            &:hover {
+              color: $special-color; // change the color on hover
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); // box shadow on the text
+              transform: scale(1.1); // scale the text up
+            }
+          }
         }
       }
     }

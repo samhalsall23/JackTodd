@@ -23,6 +23,7 @@ export default function ProjectTile({
     <div
       className="project-tile"
       style={{
+        // backgroundImage: `url(${imageSquare})`,
         backgroundImage: `url(${imageSquare})`,
         position: "absolute",
         backgroundSize: "cover",

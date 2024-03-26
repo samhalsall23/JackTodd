@@ -13,13 +13,7 @@ export default function ProjectPageContent({ id }: { id: string }) {
 
   return (
     <>
-      <div
-        style={{
-          width: "75%",
-          display: "block",
-          textAlign: "center",
-        }}
-      >
+      <div>
         <h1>{project.title}</h1>
         <br />
         <div>

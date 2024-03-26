@@ -1,9 +1,10 @@
 .react-multi-carousel-list {
-  width: 80%;
+  width: 100%;
 }
 
 .arrow-button-left {
   padding: 0 16px;
+  color: white;
   background-color: transparent;
   border: none;
   &:hover {
@@ -12,6 +13,7 @@
 }
 .arrow-button-right {
   padding: 0 16px;
+  color: white;
   background-color: transparent;
   border: none;
   &:hover {

@@ -91,10 +91,21 @@ body {
   // overflow-x: hidden;
 }
 
+html {
+  background: radial-gradient(
+    circle at 24.1% 68.8%,
+    rgb(25, 25, 25) 0%,
+    rgb(0, 0, 0) 99.4%
+  );
+  background-attachment: fixed;
+}
+
 body {
   // color: rgb(var(--foreground-rgb));
   color: white;
-  background: black;
+  height: 100%;
+  margin: 0;
+  background: transparent;
   font-family: var(--font-mono);
   // background: linear-gradient(
   //     to bottom,

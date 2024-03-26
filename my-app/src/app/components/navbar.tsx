@@ -93,10 +93,14 @@ export default function Navbar() {
       <nav className="navbar" style={{ backgroundColor, color }}>
         <div className="navbar-content">
           {showIcon ? (
-            <div className="navbar-logo-wrapper" onClick={onLogoClick}>
+            <div
+              className="navbar-logo-wrapper"
+              // style={{ backgroundColor: "red" }}
+              onClick={onLogoClick}
+            >
               <img
                 className="navbar-logo"
-                src="assets\logo\WHITELOGO-jack.png"
+                src="/assets/logo/WHITELOGO-jack.png"
                 alt="logo"
               />
             </div>
@@ -107,14 +111,18 @@ export default function Navbar() {
             <li>
               <Link href="/about">
                 <h1>
-                  ABOUT <ArrowUpRight />
+                  <span>
+                    ABOUT <ArrowUpRight />
+                  </span>
                 </h1>
               </Link>
             </li>
             <li>
               <Link href="/contact">
                 <h1>
-                  LET&apos;S WORK TOGETHER <ArrowUpRight />
+                  <span>
+                    LET&apos;S WORK TOGETHER <ArrowUpRight />
+                  </span>
                 </h1>
               </Link>
             </li>

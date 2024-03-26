@@ -2,8 +2,11 @@
 import { useEffect, useState } from "react";
 import ProjectPageContent from "../../components/ProjectPageContent";
 import projects from "../../data/projects.json";
+import MyCarousel from "@/app/components/MyCarousel";
+import "../../styles/ProjectPage.scss";
 
 interface Project {
+  index: number;
   id: string;
   title: string;
   imageSquare: string;
@@ -22,15 +25,12 @@ export default function ProjectPage({
     const chosenProject: Project | undefined = projects.find(
       (project) => project.id === id
     );
-    console.log(chosenProject);
     setProject(chosenProject || null);
-    console.log(project);
   }, [project]);
 
   return (
-    <div>
+    <div className="project-container">
       <div className="hero-image">
-        {project && <>{console.log(project.imageWide)}</>}
         <img
           src={project?.imageWide}
           alt="Hero Image"
@@ -40,16 +40,14 @@ export default function ProjectPage({
           }}
         />
       </div>
-      <div
-        style={{
-          position: "fixed",
-          marginTop: "20px",
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-        }}
-      >
+      <div className="project-body-container">
         <ProjectPageContent id={id} />
+        <div className="project-carousel-container">
+          <h3 className="view-other-projects-heading">
+            View My Other Projects
+          </h3>
+          <MyCarousel indexId={project ? project.index : 0}></MyCarousel>
+        </div>
       </div>
     </div>
   );
