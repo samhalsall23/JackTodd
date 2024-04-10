@@ -31,13 +31,14 @@ export default function Navbar() {
   const color = isLight(backgroundColor) ? "black" : "white";
 
   //icon show
-  const [showIcon, setShowIcon] = useState(false); // State to control the visibility of the icon
+  const [showIcon, setShowIcon] = useState(pathname !== "/"); // Set initial state based on pathname
 
   useEffect(() => {
     const handleScroll = () => {
       const show =
         window.scrollY > 0 ||
-        document.documentElement.classList.contains("no-scroll");
+        document.documentElement.classList.contains("no-scroll") ||
+        pathname !== "/"; // Add this condition
       setShowIcon(show);
     };
 
@@ -45,7 +46,7 @@ export default function Navbar() {
     return () => {
       document.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [pathname]);
 
   const onLogoClick = () => {
     if (pathname === "/") {
@@ -93,11 +94,7 @@ export default function Navbar() {
       <nav className="navbar" style={{ backgroundColor, color }}>
         <div className="navbar-content">
           {showIcon ? (
-            <div
-              className="navbar-logo-wrapper"
-              // style={{ backgroundColor: "red" }}
-              onClick={onLogoClick}
-            >
+            <div className="navbar-logo-wrapper" onClick={onLogoClick}>
               <img
                 className="navbar-logo"
                 src="/assets/logo/WHITELOGO-jack.png"
