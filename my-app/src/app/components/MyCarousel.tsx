@@ -57,9 +57,8 @@ export default function MyCarousel({ indexId = 0 }: { indexId?: number }) {
 
   useEffect(() => {
     console.log("indexId", indexId);
-    if (indexId !== 0) {
-      slider?.current?.goToSlide(indexId);
-    }
+    if (indexId !== 0) slider?.current?.goToSlide(1);
+    // slider?.current?.goToSlide(5);
   }, [indexId]);
 
   return (
