@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -56,16 +56,20 @@ export default function MyCarousel({ indexId = 0 }: { indexId?: number }) {
   };
 
   useEffect(() => {
-    slider?.current?.goToSlide(indexId, true);
-  }, []);
+    console.log("indexId", indexId);
+    if (indexId !== 0) {
+      slider?.current?.goToSlide(indexId);
+    }
+  }, [indexId]);
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <PrevArrow onClick={() => slider?.current?.previous(1)} />
-      <Carousel responsive={responsive} arrows={false} ref={slider}>
+      <Carousel responsive={responsive} arrows={false} ref={slider} infinite>
         {projects.map((project, index) => {
           return (
             <ProjectTile
+              key={index}
               imageSquare={project.imageSquare}
               title={project.title}
               id={project.id}
@@ -73,6 +77,7 @@ export default function MyCarousel({ indexId = 0 }: { indexId?: number }) {
           );
         })}
       </Carousel>
+
       <NextArrow onClick={() => slider?.current?.next(1)} />
     </div>
   );

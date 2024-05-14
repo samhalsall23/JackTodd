@@ -30,22 +30,24 @@ export default function ProjectPage({
 
   return (
     <div className="project-container">
-      <div className="hero-image">
-        <img
-          src={project?.imageWide}
-          alt="Hero Image"
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-        />
-      </div>
-      <div className="project-body-container">
+      <div className="project-body-container" style={{ marginTop: "20px" }}>
         <ProjectPageContent id={id} />
+        <div className="hero-image">
+          <img
+            src={project?.imageWide}
+            alt="Hero Image"
+            style={{
+              marginTop: "20px",
+              width: "100%",
+              height: "auto",
+              borderRadius: "20px", // Add this line
+            }}
+          />
+        </div>
         <div className="project-carousel-container">
-          <h3 className="view-other-projects-heading">
+          <h2 className="view-other-projects-heading">
             View My Other Projects
-          </h3>
+          </h2>
           <MyCarousel indexId={project ? project.index : 0}></MyCarousel>
         </div>
       </div>
