@@ -38,11 +38,11 @@ export default function MyCarousel({ indexId = 0 }: { indexId?: number }) {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      breakpoint: { max: 4000, min: 1800 },
+      items: 4,
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 1800, min: 1024 },
       items: 3,
     },
     tablet: {
@@ -65,20 +65,11 @@ export default function MyCarousel({ indexId = 0 }: { indexId?: number }) {
       <Carousel responsive={responsive} arrows={false} ref={slider}>
         {projects.map((project, index) => {
           return (
-            <div
-              key={index}
-              style={{
-                height: "300px",
-                width: "auto",
-                border: "solid 2px black",
-              }}
-            >
-              <ProjectTile
-                imageSquare={project.imageSquare}
-                title={project.title}
-                id={project.id}
-              />
-            </div>
+            <ProjectTile
+              imageSquare={project.imageSquare}
+              title={project.title}
+              id={project.id}
+            />
           );
         })}
       </Carousel>
