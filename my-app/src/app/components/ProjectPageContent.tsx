@@ -16,7 +16,7 @@ export default function ProjectPageContent({ id }: { id: string }) {
       <div>
         <h1>{project.title}</h1>
         <br />
-        <div>
+        <div style={{ font: "20px" }}>
           {typeof project.description === "string" &&
             project.description.split("\n").map((line, index) => (
               <React.Fragment key={index}>

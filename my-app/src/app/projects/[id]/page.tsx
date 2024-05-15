@@ -45,9 +45,9 @@ export default function ProjectPage({
           />
         </div>
         <div className="project-carousel-container">
-          <h2 className="view-other-projects-heading">
+          <h1 className="view-other-projects-heading">
             View My Other Projects
-          </h2>
+          </h1>
           <MyCarousel indexId={project ? project.index : 0}></MyCarousel>
         </div>
       </div>

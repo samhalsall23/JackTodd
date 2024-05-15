@@ -4,7 +4,7 @@ import MyCarousel from "../components/MyCarousel";
 
 export default function About() {
   return (
-    <div className="project-body-container">
+    <div style={{ width: "80%", margin: "auto" }}>
       <h1 style={{ marginTop: "20px" }}>About Me</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam blanditiis

@@ -2,8 +2,6 @@ Jack Todd's
 
 **TO DO**
 
-- Fix project carasouel
-- Home logo on non home pages
 - Fix Project Page
 - Fix contact form
 - Fix mobile sidebar

@@ -14,10 +14,10 @@ import React from "react";
 // import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 
 // Function to determine if a color is light or dark
-function isLight(color) {
-  const [r, g, b] = color.match(/\w\w/g).map((c) => parseInt(c, 16));
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b > 128;
-}
+// function isLight(color) {
+//   const [r, g, b] = color.match(/\w\w/g).map((c) => parseInt(c, 16));
+//   return 0.2126 * r + 0.7152 * g + 0.0722 * b > 128;
+// }
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -27,11 +27,13 @@ export default function Navbar() {
     pathname.includes(project.id)
   );
   // Get the color value of the current project, or default to a fallback color
-  const backgroundColor = currentProject ? currentProject.color : "black";
-  const color = isLight(backgroundColor) ? "black" : "white";
+  // const backgroundColor = currentProject ? currentProject.color : "black";
+  // const color = isLight(backgroundColor) ? "black" : "white";
 
   //icon show
+  console.log(pathname);
   const [showIcon, setShowIcon] = useState(pathname !== "/"); // Set initial state based on pathname
+  console.log(showIcon);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +48,10 @@ export default function Navbar() {
     return () => {
       document.removeEventListener("scroll", handleScroll);
     };
+  }, [pathname]);
+
+  useEffect(() => {
+    setShowIcon(pathname !== "/");
   }, [pathname]);
 
   const onLogoClick = () => {
@@ -91,7 +97,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar" style={{ backgroundColor, color }}>
+      <nav className="navbar">
         <div className="navbar-content">
           {showIcon ? (
             <div className="navbar-logo-wrapper" onClick={onLogoClick}>
