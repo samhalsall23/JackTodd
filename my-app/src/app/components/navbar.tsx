@@ -2,14 +2,12 @@
 "use client";
 import Link from "next/link";
 import "../styles/Navbar.scss";
-import { ArrowUpRight, List } from "react-bootstrap-icons";
+import { ArrowUpRight, List, X, XLg } from "react-bootstrap-icons";
 import { usePathname } from "next/navigation";
-import projects from "../data/projects.json";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Sidebar from "./Sidebar";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import React from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 // import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 
@@ -22,10 +20,13 @@ import React from "react";
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
+
+  const mediumBreakpoint = useMediaQuery("(min-width: 992px)");
+
   // Find the project that matches the current pathname
-  const currentProject = projects.find((project) =>
-    pathname.includes(project.id)
-  );
+  // const currentProject = projects.find((project) =>
+  //   pathname.includes(project.id)
+  // );
   // Get the color value of the current project, or default to a fallback color
   // const backgroundColor = currentProject ? currentProject.color : "black";
   // const color = isLight(backgroundColor) ? "black" : "white";
@@ -55,6 +56,7 @@ export default function Navbar() {
   }, [pathname]);
 
   const onLogoClick = () => {
+    setsidebarOpen(false);
     if (pathname === "/") {
       window.scrollTo({
         top: 0,
@@ -63,41 +65,20 @@ export default function Navbar() {
       });
     } else router.push("/");
   };
+  // NEW SIDEBAR
+  const [sidebarOpen, setsidebarOpen] = useState(false);
 
-  // SIDEBAR
-  const [sidebarOpen, setsidebarOpen] = React.useState({
-    right: false,
-  });
-  const theme = createTheme({
-    components: {
-      MuiDrawer: {
-        styleOverrides: {
-          paper: {
-            backgroundColor: "#2B2B2B",
-            color: "white",
-          },
-        },
-      },
-    },
-  });
+  useEffect(() => {
+    console.log(sidebarOpen);
+  }, [sidebarOpen]);
 
-  const toggleDrawer =
-    (anchor: string, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event &&
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
-      }
-      setsidebarOpen({ ...sidebarOpen, [anchor]: open });
-    };
+  useEffect(() => {
+    console.log(mediumBreakpoint);
+  }, [mediumBreakpoint]);
 
   return (
     <>
-      <nav className="navbar">
+      <nav className="navbar" style={{ zIndex: 10 }}>
         <div className="navbar-content">
           {showIcon ? (
             <div className="navbar-logo-wrapper" onClick={onLogoClick}>
@@ -131,27 +112,79 @@ export default function Navbar() {
             </li>
           </ul>
           <div className="sidebar-wrapper">
+            <XLg
+              width={30}
+              height={30}
+              onClick={() => setsidebarOpen(false)}
+              style={{
+                position: "absolute",
+                bottom: "-15",
+                right: "6",
+                visibility: sidebarOpen ? "visible" : "hidden",
+                opacity: sidebarOpen ? 1 : 0,
+                transition: "opacity 0.5s linear",
+              }}
+            />
             <List
               width={40}
               height={40}
-              onClick={toggleDrawer("right", true)}
+              onClick={() => setsidebarOpen(true)}
+              style={{
+                position: "absolute",
+                bottom: "-21",
+                right: "0",
+                visibility: sidebarOpen ? "hidden" : "visible",
+                opacity: sidebarOpen ? 0 : 1,
+                transition: "opacity 0.5s linear",
+              }}
             />
           </div>
         </div>
-        <ThemeProvider theme={theme}>
-          <div data-testid="outer-div">
-            <React.Fragment key={"right"}>
-              {/* <Button onClick={toggleDrawer("right", true)}>Open Right</Button> */}
-              <Sidebar
-                anchor="right"
-                open={sidebarOpen["right"]}
-                onClose={toggleDrawer("right", false)}
-                onOpen={toggleDrawer("right", true)}
-              />
-            </React.Fragment>
-          </div>
-        </ThemeProvider>{" "}
       </nav>
+      {/* {isDesktop && ( */}
+      <div
+        className={`mobile-sidebar ${
+          sidebarOpen && !mediumBreakpoint ? "open" : ""
+        }`}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          position: "fixed", // Change from 'absolute' to 'fixed'
+          top: 90, // Change from '100%' to 0
+          left: 0,
+          width: "100%",
+          zIndex: sidebarOpen ? 2 : -1, // Increase the z-index
+          height: "100vh",
+        }}
+      >
+        <Link href={"/"}>
+          <h1
+            className="sidebar-content-item"
+            onClick={() => setsidebarOpen(false)}
+          >
+            HOME
+          </h1>
+        </Link>
+        <Link href={"/about"}>
+          <h1
+            className="sidebar-content-item"
+            onClick={() => setsidebarOpen(false)}
+          >
+            ABOUT
+          </h1>
+        </Link>
+        <Link href={"/contact"}>
+          <h1
+            className="sidebar-content-item"
+            onClick={() => setsidebarOpen(false)}
+          >
+            CONTACT ME
+          </h1>
+        </Link>
+      </div>
+
+      {/* )} */}
     </>
   );
 }
