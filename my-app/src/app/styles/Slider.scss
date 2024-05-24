@@ -9,8 +9,12 @@
   color: white;
   background-color: transparent;
   border: none;
-  &:hover {
-    cursor: pointer;
+  svg {
+    &:hover {
+      cursor: pointer;
+      color: $special-color;
+      transform: scale(1.6); // scale the svg up
+    }
   }
 }
 .arrow-button-right {

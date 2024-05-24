@@ -154,7 +154,7 @@ export default function Navbar() {
           top: 90, // Change from '100%' to 0
           left: 0,
           width: "100%",
-          zIndex: sidebarOpen ? 2 : -1, // Increase the z-index
+          zIndex: sidebarOpen && !mediumBreakpoint ? 2 : -1, // Increase the z-index
           height: "100vh",
         }}
       >

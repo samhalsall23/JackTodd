@@ -2,9 +2,10 @@ Jack Todd's
 
 **TO DO**
 
-- Fix Project Page
+- Fix Project Page (default slider load ==> sort before loading it in)
 - Fix contact form
-- Fix mobile sidebar
+- Fix font
+- Cleanup
 
 **Question Log**
 
