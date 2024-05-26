@@ -1,5 +1,9 @@
 @import "../utils/breakpoints.scss";
 @import "../globals.scss";
+:-webkit-autofill {
+  transition: background-color 100000s ease-in-out 0s,
+    color 100000s ease-in-out 0s;
+}
 .content {
   margin-left: 50px;
   margin-right: 50px;
@@ -95,12 +99,38 @@
   justify-content: center;
   width: 100%;
   margin: auto;
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    .loader {
+      align-self: center;
+      border: 3px solid transparent; /* Light grey */
+      border-top: 3px solid #000000; /* Blue */
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+    }
+  }
 
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
   .form-group {
     display: flex;
     flex-direction: column;
     align-items: start;
   }
+  .error-message {
+    margin-bottom: 8px;
+    color: red;
+  }
+
   .submit-button {
     font-family: var(
       --font-mono
@@ -109,12 +139,13 @@
     margin-bottom: 20px;
     width: 100%;
     border-radius: 10px;
-    background-color: #ebe9e983;
+    color: black;
+    background-color: #ebe9e9d7;
     border: 1px solid #6d6969d3;
-    padding: 10px;
     font-size: 20px;
     cursor: pointer;
     transition: 0.3s;
+    height: 44px;
     &:hover {
       background-color: $special-color;
     }
@@ -128,10 +159,11 @@
     font-size: 20px;
     margin-bottom: 10px;
   }
+
   input,
   textarea {
     font-family: $default-font;
-    background-color: white;
+    background-color: white !important;
     font-size: 18px;
     margin-bottom: 20px;
     border: 2px solid #dddddd;

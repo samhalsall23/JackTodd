@@ -42,33 +42,57 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [messageError, setMessageError] = useState("");
+
   const [showForm, setShowForm] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  useEffect(() => {
-    setShowForm(!Cookies.get("formSent"));
-  }, []);
-
-  useEffect(() => {
-    showForm && setIsLoading(false);
-  }, [showForm]);
+  function validateEmail(email: string) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (form.current) {
-      emailjs
-        .sendForm("service_4vuyk0j", "template_5zuuers", form.current, {
-          publicKey: "HD6ttLHpzygZIL9jM",
-        })
-        .then(
-          () => {
-            console.log("SUCCESS!");
-            Cookies.set("formSent", "true");
-          },
-          (error) => {
-            console.log("FAILED...", error.text);
-          }
-        );
+
+    // Reset error messages
+    setNameError("");
+    setEmailError("");
+    setMessageError("");
+
+    if (name !== "" && validateEmail(email) && message !== "") {
+      setIsLoading(true);
+      if (form.current) {
+        emailjs
+          .sendForm("service_4vuyk0j", "template_5zuuers", form.current, {
+            publicKey: "HD6ttLHpzygZIL9jM",
+          })
+          .then(
+            () => {
+              setShowForm(false);
+              setIsLoading(false);
+              console.log("SUCCESS!");
+            },
+            (error) => {
+              setIsError(true);
+              setIsLoading(false);
+              console.log("FAILED...", error.text);
+            }
+          );
+      }
+    } else {
+      if (name === "") {
+        setNameError("Please fill in your name.");
+      }
+      if (!validateEmail(email)) {
+        setEmailError("Please enter a valid email.");
+      }
+      if (message === "") {
+        setMessageError("Please enter a message.");
+      }
     }
   };
 
@@ -83,60 +107,105 @@ export default function Contact() {
       <main className="main-contact-page">
         <section className="left-section">
           <div className="form-container">
-            {!isLoading && (
+            {showForm && !isError && (
+              <form ref={form} onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="name">Name:</label>
+                  {nameError && (
+                    <span className="error-message">{nameError}</span>
+                  )}
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      setNameError(""); // Fix: Pass an empty string instead of a boolean value
+                    }}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email:</label>
+                  {emailError && (
+                    <span className="error-message">{emailError}</span>
+                  )}
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      setEmailError("");
+                    }}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message">Message:</label>
+                  {messageError && (
+                    <span className="error-message">{messageError}</span>
+                  )}
+                  <textarea
+                    rows={6}
+                    id="message"
+                    name="message"
+                    value={message}
+                    onChange={(e) => {
+                      setMessage(e.target.value);
+                      setMessageError("");
+                    }}
+                  />
+                </div>
+                <button type="submit" className="submit-button">
+                  {isLoading ? (
+                    <div className="loader-container">
+                      <div className="loader" />
+                    </div>
+                  ) : (
+                    "SEND"
+                  )}
+                </button>
+              </form>
+            )}
+            {!showForm && !isError && (
+              <div className="form-sent">
+                <h1
+                  style={{
+                    marginTop: "30px",
+                    marginBottom: "20px",
+                    fontSize: "30px",
+                  }}
+                >
+                  Thank you for your message!
+                </h1>
+                <p style={{ marginBottom: "40px", fontSize: "20px" }}>
+                  I'll get back to you as soon as possible.
+                </p>
+              </div>
+            )}
+            {isError && (
               <>
-                {showForm ? (
-                  <form ref={form} onSubmit={handleSubmit}>
-                    <div className="form-group">
-                      <label htmlFor="name">Name:</label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="email">Email:</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="message">Message:</label>
-                      <textarea
-                        rows={6}
-                        id="message"
-                        name="message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                      />
-                    </div>
-                    <button type="submit" className="submit-button">
-                      SEND
-                    </button>
-                  </form>
-                ) : (
-                  <div className="form-sent">
-                    <h1
-                      style={{
-                        marginTop: "30px",
-                        marginBottom: "20px",
-                        fontSize: "30px",
-                      }}
-                    >
-                      Thank you for your message!
-                    </h1>
-                    <p style={{ marginBottom: "40px", fontSize: "20px" }}>
-                      I'll get back to you as soon as possible.
-                    </p>
-                  </div>
-                )}
+                <h1
+                  style={{
+                    marginTop: "30px",
+                    marginBottom: "20px",
+                    fontSize: "30px",
+                    color: "red",
+                  }}
+                >
+                  There has been an issue sending your message.
+                </h1>
+                <p
+                  style={{
+                    marginBottom: "40px",
+                    fontSize: "20px",
+                    color: "red",
+                  }}
+                >
+                  Please refresh and try again or try contacting me on the
+                  details provided on this page.
+                </p>
               </>
             )}
           </div>
