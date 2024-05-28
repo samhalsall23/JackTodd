@@ -68,11 +68,11 @@ export default function Contact() {
       if (form.current) {
         emailjs
           .sendForm(
-            process.env.SERVICE_KEY || "",
-            process.env.TEMPLATE_KEY || "",
+            process.env.NEXT_PUBLIC_SERVICE_KEY || "",
+            process.env.NEXT_PUBLIC_TEMPLATE_KEY || "",
             form.current,
             {
-              publicKey: process.env.API_KEY,
+              publicKey: process.env.NEXT_PUBLIC_API_KEY,
             }
           )
           .then(
