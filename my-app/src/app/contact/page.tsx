@@ -104,8 +104,8 @@ export default function Contact() {
     <main className="content">
       <div className="contact-header">
         <h1>
-          Let's <span style={{ color: "#a67c00" }}>Create</span> Something Great
-          Together
+          Let&apos;s <span style={{ color: "#a67c00" }}>Create</span> Something
+          Great Together
         </h1>
       </div>
       <main className="main-contact-page">
@@ -184,7 +184,7 @@ export default function Contact() {
                   Thank you for your message!
                 </h1>
                 <p style={{ marginBottom: "40px", fontSize: "20px" }}>
-                  I'll get back to you as soon as possible.
+                  I&apos;ll get back to you as soon as possible.
                 </p>
               </div>
             )}
