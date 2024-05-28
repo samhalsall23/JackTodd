@@ -81,9 +81,13 @@
     }
   }
 }
+.sidebar-content-container {
+  margin-top: -12vh;
+}
 .sidebar-content-item {
   font-size: 40px;
-  padding-bottom: 20vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;

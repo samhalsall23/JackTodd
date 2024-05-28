@@ -2,9 +2,7 @@ Jack Todd's
 
 **TO DO**
 
-- Fix Project Page (default slider load ==> sort before loading it in)
-- Fix contact form
-- Fix font
+- Connect backend, have API key stored on Vercel
 - Cleanup
 
 **Question Log**

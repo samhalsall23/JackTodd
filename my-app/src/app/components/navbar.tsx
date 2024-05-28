@@ -158,30 +158,32 @@ export default function Navbar() {
           height: "100vh",
         }}
       >
-        <Link href={"/"}>
-          <h1
-            className="sidebar-content-item"
-            onClick={() => setsidebarOpen(false)}
-          >
-            HOME
-          </h1>
-        </Link>
-        <Link href={"/about"}>
-          <h1
-            className="sidebar-content-item"
-            onClick={() => setsidebarOpen(false)}
-          >
-            ABOUT
-          </h1>
-        </Link>
-        <Link href={"/contact"}>
-          <h1
-            className="sidebar-content-item"
-            onClick={() => setsidebarOpen(false)}
-          >
-            CONTACT ME
-          </h1>
-        </Link>
+        <div className="sidebar-content-container">
+          <Link href={"/"}>
+            <h1
+              className="sidebar-content-item"
+              onClick={() => setsidebarOpen(false)}
+            >
+              HOME
+            </h1>
+          </Link>
+          <Link href={"/about"}>
+            <h1
+              className="sidebar-content-item"
+              onClick={() => setsidebarOpen(false)}
+            >
+              ABOUT
+            </h1>
+          </Link>
+          <Link href={"/contact"}>
+            <h1
+              className="sidebar-content-item"
+              onClick={() => setsidebarOpen(false)}
+            >
+              CONTACT ME
+            </h1>
+          </Link>
+        </div>
       </div>
 
       {/* )} */}

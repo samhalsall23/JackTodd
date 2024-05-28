@@ -46,27 +46,34 @@ export default function MyCarousel({ indexId = 0 }: { indexId?: number }) {
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 670 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 670, min: 0 },
       items: 1,
     },
   };
+  const sortedProjects = [...projects].sort((a, b) => {
+    const aIndex = projects.indexOf(a);
+    const bIndex = projects.indexOf(b);
 
-  useEffect(() => {
-    console.log("indexId", indexId);
-    // if (indexId !== 0)
-    slider?.current?.goToSlide(3);
-    // slider?.current?.goToSlide(5);
-  }, [indexId]);
+    if (aIndex < indexId && bIndex >= indexId) {
+      return 1;
+    }
+    if (aIndex >= indexId && bIndex < indexId) {
+      return -1;
+    }
+    return aIndex - bIndex;
+  });
+
+  console.log(sortedProjects);
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <PrevArrow onClick={() => slider?.current?.previous(1)} />
       <Carousel responsive={responsive} arrows={false} ref={slider} infinite>
-        {projects.map((project, index) => {
+        {sortedProjects.map((project, index) => {
           return (
             <ProjectTile
               key={index}
