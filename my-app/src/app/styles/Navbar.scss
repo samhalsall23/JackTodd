@@ -3,11 +3,12 @@
 
 .navbar {
   position: sticky;
-  background: radial-gradient(
-    circle at 24.1% 68.8%,
-    rgb(25, 25, 25) 0%,
-    rgb(0, 0, 0) 99.4%
-  );
+  // background: radial-gradient(
+  //   circle at 24.1% 68.8%,
+  //   rgb(25, 25, 25) 0%,
+  //   rgb(0, 0, 0) 99.4%
+  // );
+  background: black;
   top: 0;
   z-index: 100;
   min-height: 90px;
@@ -104,11 +105,12 @@
 .mobile-sidebar {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  background: radial-gradient(
-    circle at 24.1% 68.8%,
-    rgb(25, 25, 25) 0%,
-    rgb(0, 0, 0) 99.4%
-  );
+  // background: radial-gradient(
+  //   circle at 24.1% 68.8%,
+  //   rgb(25, 25, 25) 0%,
+  //   rgb(0, 0, 0) 99.4%
+  // );
+  background: black;
   &.open {
     opacity: 1;
   }

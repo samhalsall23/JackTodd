@@ -93,11 +93,12 @@ body {
 }
 
 html {
-  background: radial-gradient(
-    circle at 24.1% 68.8%,
-    rgb(25, 25, 25) 0%,
-    rgb(0, 0, 0) 99.4%
-  );
+  // background: radial-gradient(
+  //   circle at 24.1% 68.8%,
+  //   rgb(25, 25, 25) 0%,
+  //   rgb(0, 0, 0) 99.4%
+  // );
+  background: black;
   background-attachment: fixed;
   // font-family: $default-font;
 }
