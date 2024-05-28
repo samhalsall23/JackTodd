@@ -78,6 +78,7 @@ export default function Contact() {
             (error) => {
               setIsError(true);
               setIsLoading(false);
+              console.log("Error: ", error);
             }
           );
       }
