@@ -67,9 +67,14 @@ export default function Contact() {
       setIsLoading(true);
       if (form.current) {
         emailjs
-          .sendForm("service_4vuyk0j", "template_5zuuers", form.current, {
-            publicKey: "HD6ttLHpzygZIL9jM",
-          })
+          .sendForm(
+            process.env.SERVICE_KEY || "",
+            process.env.TEMPLATE_KEY || "",
+            form.current,
+            {
+              publicKey: process.env.API_KEY,
+            }
+          )
           .then(
             () => {
               setShowForm(false);
