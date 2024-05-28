@@ -32,9 +32,7 @@ export default function Navbar() {
   // const color = isLight(backgroundColor) ? "black" : "white";
 
   //icon show
-  console.log(pathname);
   const [showIcon, setShowIcon] = useState(pathname !== "/"); // Set initial state based on pathname
-  console.log(showIcon);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,14 +65,6 @@ export default function Navbar() {
   };
   // NEW SIDEBAR
   const [sidebarOpen, setsidebarOpen] = useState(false);
-
-  useEffect(() => {
-    console.log(sidebarOpen);
-  }, [sidebarOpen]);
-
-  useEffect(() => {
-    console.log(mediumBreakpoint);
-  }, [mediumBreakpoint]);
 
   return (
     <>

@@ -74,12 +74,10 @@ export default function Contact() {
             () => {
               setShowForm(false);
               setIsLoading(false);
-              console.log("SUCCESS!");
             },
             (error) => {
               setIsError(true);
               setIsLoading(false);
-              console.log("FAILED...", error.text);
             }
           );
       }

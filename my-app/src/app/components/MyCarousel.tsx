@@ -67,8 +67,6 @@ export default function MyCarousel({ indexId = 0 }: { indexId?: number }) {
     return aIndex - bIndex;
   });
 
-  console.log(sortedProjects);
-
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <PrevArrow onClick={() => slider?.current?.previous(1)} />
