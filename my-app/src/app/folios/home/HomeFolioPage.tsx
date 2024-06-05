@@ -1,14 +1,14 @@
 "use client";
-import React from "react";
-import ProjectTile from "./components/ProjectTile";
 
 import { ChevronDown } from "react-bootstrap-icons";
 
-import projects from "./data/projects.json";
+import ProjectTile from "@/app/components/ProjectTile";
 
-import "./page.scss";
+import projects from "@/app/data/projects.json";
+import "./home-styles.scss";
 
-export default function Page() {
+export default function HomeFolioPage() {
+  // FUNCTIONS ---
   const handleScrollDownClick = () => {
     window.scrollBy({
       top: window.innerHeight - 90, // This scrolls down by 100vh

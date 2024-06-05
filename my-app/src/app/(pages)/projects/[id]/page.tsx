@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import ProjectPageContent from "../../components/ProjectPageContent";
-import projects from "../../data/projects.json";
+import ProjectPageContent from "../../../components/ProjectPageContent";
+import projects from "../../../data/projects.json";
 import MyCarousel from "@/app/components/MyCarousel";
 import "../../styles/ProjectPage.scss";
 

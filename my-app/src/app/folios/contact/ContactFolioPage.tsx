@@ -1,52 +1,29 @@
 "use client";
 
 import React, { useRef, useState } from "react";
+import { ContactDetailHorizontalTile } from "./ContactHorizontalTile";
 
-import EmailIcon from "@mui/icons-material/Email";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import "./contact-styles.scss";
 
-import "../styles/Contact.scss";
-
-const ContactDetailHorizontalTile = () => {
-  return [
-    { heading: "EMAIL", icon: <EmailIcon />, details: "JackTodd@gmail.com" },
-    { heading: "LINKEDIN", icon: <LinkedInIcon />, details: "/JackTodd" },
-    {
-      heading: "INSTAGRAM",
-      icon: <InstagramIcon />,
-      details: "@JackToddDesigns",
-    },
-  ].map((contactDetail, index) => {
-    return (
-      <div key={index} className="contact-info-tile">
-        <div className="contact-info-tile-header">
-          {contactDetail.icon}
-          <h2>{contactDetail.heading}</h2>
-        </div>
-        <div className="contact-info-tile-details">
-          <p>{contactDetail.details}</p>
-          <hr />
-        </div>
-      </div>
-    );
-  });
-};
-
-export default function Contact() {
-  const form = useRef<HTMLFormElement>(null);
-
+export default function ContactFolioPage() {
+  // STATES ---
+  // form values
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  // form errors
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [messageError, setMessageError] = useState("");
 
+  // form states
   const [showForm, setShowForm] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  // FUNCTIONS ---
+  const form = useRef<HTMLFormElement>(null);
 
   function validateEmail(email: string) {
     var re = /\S+@\S+\.\S+/;
@@ -56,7 +33,6 @@ export default function Contact() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Reset error messages
     setNameError("");
     setEmailError("");
     setMessageError("");
@@ -103,7 +79,7 @@ export default function Contact() {
     <main className="content">
       <div className="contact-header">
         <h1>
-          Let&apos;s <span style={{ color: "#a67c00" }}>Create</span> Something
+          Let&apos;s <span className="special-text">Create</span> Something
           Great Together
         </h1>
       </div>
@@ -124,7 +100,7 @@ export default function Contact() {
                     value={name}
                     onChange={(e) => {
                       setName(e.target.value);
-                      setNameError(""); // Fix: Pass an empty string instead of a boolean value
+                      setNameError("");
                     }}
                   />
                 </div>
@@ -173,39 +149,20 @@ export default function Contact() {
             )}
             {!showForm && !isError && (
               <div className="form-sent">
-                <h1
-                  style={{
-                    marginTop: "30px",
-                    marginBottom: "20px",
-                    fontSize: "30px",
-                  }}
-                >
+                <h1 className="success-submitting-header">
                   Thank you for your message!
                 </h1>
-                <p style={{ marginBottom: "40px", fontSize: "20px" }}>
+                <p className="success-submitting-header">
                   I&apos;ll get back to you as soon as possible.
                 </p>
               </div>
             )}
             {isError && (
               <>
-                <h1
-                  style={{
-                    marginTop: "30px",
-                    marginBottom: "20px",
-                    fontSize: "30px",
-                    color: "red",
-                  }}
-                >
+                <h1 className="error-submitting-header">
                   There has been an issue sending your message.
                 </h1>
-                <p
-                  style={{
-                    marginBottom: "40px",
-                    fontSize: "20px",
-                    color: "red",
-                  }}
-                >
+                <p className="error-submitting-text">
                   Please refresh and try again or try contacting me on the
                   details provided on this page.
                 </p>
@@ -214,9 +171,10 @@ export default function Contact() {
           </div>
         </section>
         <section className="right-section">
-          <div className="contact-info">{ContactDetailHorizontalTile()}</div>
+          <div className="contact-info">{<ContactDetailHorizontalTile />}</div>
         </section>
       </main>
+      <div className="bottom-page-margin" />
     </main>
   );
 }

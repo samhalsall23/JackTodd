@@ -1,13 +1,16 @@
-@import "../utils/breakpoints.scss";
-@import "../globals.scss";
+@import "@/app/utils/breakpoints.scss";
+@import "@/app/globals.scss";
+
 :-webkit-autofill {
   transition: background-color 100000s ease-in-out 0s,
     color 100000s ease-in-out 0s;
 }
+
 .content {
   margin-left: 50px;
   margin-right: 50px;
 }
+
 .main-contact-page {
   display: flex;
   flex-direction: row;
@@ -23,6 +26,7 @@
     width: 100%;
   }
 }
+
 .right-section {
   margin-top: 20px;
   display: flex;
@@ -34,26 +38,28 @@
     width: 100%;
   }
 }
+
 .contact-info {
   min-width: 300px;
   @media (max-width: map-get($breakpoints, md)) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // Creates 3 columns
-    grid-gap: 40px; // Adjust as needed
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
     justify-content: space-between;
     width: 100%;
   }
   @media (max-width: map-get($breakpoints, sm)) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); // Creates 3 columns
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
   }
   @media (max-width: 500px) {
     display: grid;
-    grid-template-columns: repeat(1, 1fr); // Creates 3 columns
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 0px;
   }
 }
+
 .contact-header {
   margin-top: 30px;
   width: 60%;
@@ -81,6 +87,7 @@
     margin-left: 16px;
   }
 }
+
 .contact-info-tile-details {
   p {
     font-size: 20px;
@@ -99,57 +106,6 @@
   justify-content: center;
   width: 100%;
   margin: auto;
-  .loader-container {
-    display: flex;
-    justify-content: center;
-    .loader {
-      align-self: center;
-      border: 3px solid transparent; /* Light grey */
-      border-top: 3px solid #000000; /* Blue */
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      animation: spin 1s linear infinite;
-    }
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-  }
-  .error-message {
-    margin-bottom: 8px;
-    color: red;
-  }
-
-  .submit-button {
-    font-family: var(
-      --font-mono
-    ); /* or whichever global font variable you want to use */
-    margin-top: 15px;
-    margin-bottom: 20px;
-    width: 100%;
-    border-radius: 10px;
-    color: black;
-    background-color: #ebe9e9d7;
-    border: 1px solid #6d6969d3;
-    font-size: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-    height: 44px;
-    &:hover {
-      background-color: $special-color;
-    }
-  }
 
   form {
     width: 100%;
@@ -175,5 +131,82 @@
       outline: none;
       box-shadow: 0 0 0 4px $special-color;
     }
+  }
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  align-self: center;
+  border: 3px solid transparent;
+  border-top: 3px solid black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.error-message {
+  margin-bottom: 8px;
+  color: red;
+}
+
+.success-submitting-header {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.success-submitting-text {
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.error-submitting-header {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: red;
+}
+
+.error-submitting-text {
+  margin-bottom: 40px;
+  font-size: 20px;
+  color: red;
+}
+
+.submit-button {
+  font-family: var(--font-mono);
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+  color: black;
+  background-color: #ebe9e9d7;
+  border: 1px solid #6d6969d3;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 44px;
+  &:hover {
+    background-color: $special-color;
   }
 }
