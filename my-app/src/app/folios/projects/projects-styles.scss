@@ -1,10 +1,5 @@
-// .project-container {
-//   display: flex;
-//   flex-direction: column;
-// }
-
 .project-body-container {
-  margin-top: 20px;
+  padding-top: 12px;
   width: 80%;
   margin: auto;
 }
@@ -15,4 +10,11 @@
 
 .view-other-projects-heading {
   margin-bottom: 20px;
+}
+
+.hero-project-image {
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
 }
