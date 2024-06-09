@@ -1,0 +1,137 @@
+@import "@/app/utils/breakpoints.scss";
+@import "@/app/globals.scss";
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(10%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.hero-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - 17px); // Subtract scrollbar width
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+  justify-content: space-evenly;
+
+  p {
+    text-align: center;
+    font-size: 24px;
+    @media (min-width: map-get($breakpoints, md)) {
+      font-size: 28px;
+    }
+  }
+
+  .hero-logo {
+    margin-top: 120px;
+    width: 75%;
+    height: auto;
+    animation: fadeIn 0.2s ease-in-out, slideIn 0.2s ease-in-out;
+
+    @media (min-width: map-get($breakpoints, md)) {
+      width: 40%;
+    }
+  }
+
+  .hero-text {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    opacity: 0;
+    animation: fadeIn 0.2s ease-in-out 0.2s forwards,
+      slideIn 0.2s ease-in-out 0.2s forwards;
+  }
+
+  .work-together {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    padding: 10px 40px;
+    width: fit-content;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    margin-left: 20px;
+    box-shadow: 0 2px 2px 0 rgba(255, 255, 255, 0.5);
+    transition: all 0.5s ease;
+    opacity: 0;
+    animation: fadeIn 0.2s ease-in-out 0.4s forwards,
+      slideIn 0.2s ease-in-out 0.4s forwards;
+
+    p {
+      font-weight: bolder;
+    }
+
+    &:hover {
+      background-color: $special-color;
+      box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+      transform: scale(1.05) !important;
+    }
+  }
+  .arrow-down {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    opacity: 0;
+    animation: fadeIn 0.2s ease-in-out 0.6s forwards,
+      slideIn 0.2s ease-in-out 0.6s forwards;
+
+    svg {
+      transition: all 0.3s ease;
+      transform: scale(1.3);
+
+      &:hover {
+        color: $special-color;
+        transform: scale(1.6);
+      }
+    }
+  }
+}
+
+.project-grid {
+  background-color: black;
+  position: relative;
+  z-index: 1;
+  margin-top: calc(100vh - 90px);
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  grid-template-columns: repeat(1, 1fr);
+  @media (min-width: map-get($breakpoints, xs)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: map-get($breakpoints, md)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.project-tile-outer {
+  background-color: #f0f0f0;
+  padding-bottom: 100%;
+  position: relative;
+  border: 1px solid black;
+}

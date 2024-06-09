@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.scss";
-import Navbar from "./components/navbar";
-import Sidebar from "./components/Sidebar";
-// import React, { Suspense } from "react";
 
-// const Navbar = React.lazy(() => import("./components/navbar"));
+import Navbar from "./components/navbar";
+import "./globals.scss";
 
 const roboto = Poppins({
   weight: "400",

@@ -1,9 +1,12 @@
-Jack Todd's
-
 **TO DO**
 
-- Connect backend, have API key stored on Vercel
-- Cleanup
+- Clean up components
+- Add 12th project
+- Fix text size everywhere for different window widths
+- Update email to send to Jack
+- Update LinkedIn, email, instagram
+- Add logo to tab and get rid of vercel logo
+- Animations on load
 
 **Question Log**
 

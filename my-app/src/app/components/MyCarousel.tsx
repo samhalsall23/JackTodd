@@ -70,7 +70,13 @@ export default function MyCarousel({ indexId = 0 }: { indexId?: number }) {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <PrevArrow onClick={() => slider?.current?.previous(1)} />
-      <Carousel responsive={responsive} arrows={false} ref={slider} infinite>
+      <Carousel
+        responsive={responsive}
+        arrows={false}
+        ref={slider}
+        infinite
+        partialVisible={false}
+      >
         {sortedProjects.map((project, index) => {
           return (
             <ProjectTile
@@ -78,11 +84,11 @@ export default function MyCarousel({ indexId = 0 }: { indexId?: number }) {
               imageSquare={project.imageSquare}
               title={project.title}
               id={project.id}
+              isCarousel={true}
             />
           );
         })}
       </Carousel>
-
       <NextArrow onClick={() => slider?.current?.next(1)} />
     </div>
   );
