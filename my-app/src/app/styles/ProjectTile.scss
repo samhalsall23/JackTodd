@@ -16,6 +16,9 @@
     border-radius: 20px;
     border: solid white 1px;
     width: 90%;
+    &:hover {
+      border: none;
+    }
   }
 
   &::before {
