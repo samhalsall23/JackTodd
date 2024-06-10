@@ -1,19 +1,15 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import projects from "../data/projects.json";
-import ProjectTile from "./ProjectTile";
-
-import "../styles/Slider.scss";
+import React, { useRef } from "react";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+
+import projects from "@/app/data/projects.json";
+import ProjectTile from "@/app/components/ProjectTile";
+import "@/app/components/MyCarousel/my-carousel-styles.scss";
 
 // Next Arrow
 const NextArrow = ({ onClick }: { onClick: () => void }) => {
@@ -34,7 +30,10 @@ const PrevArrow = ({ onClick }: { onClick: () => void }) => {
 };
 
 export default function MyCarousel({ indexId = 0 }: { indexId?: number }) {
+  // USE REF FOR SLIDER ---
   const slider = useRef<Carousel>(null);
+
+  // RESPONSIVE SETTINGS ---
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -54,6 +53,8 @@ export default function MyCarousel({ indexId = 0 }: { indexId?: number }) {
       items: 1,
     },
   };
+
+  // SORT PROJECTS ---
   const sortedProjects = [...projects].sort((a, b) => {
     const aIndex = projects.indexOf(a);
     const bIndex = projects.indexOf(b);
@@ -68,7 +69,7 @@ export default function MyCarousel({ indexId = 0 }: { indexId?: number }) {
   });
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div className="carousel-container">
       <PrevArrow onClick={() => slider?.current?.previous(1)} />
       <Carousel
         responsive={responsive}

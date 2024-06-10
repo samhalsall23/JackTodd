@@ -1,4 +1,4 @@
-import MyCarousel from "../../components/MyCarousel";
+import MyCarousel from "../../components/MyCarousel/MyCarousel";
 import about from "@/app/data/about.json";
 
 import "./about-styles.scss";

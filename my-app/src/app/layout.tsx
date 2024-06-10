@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar/Navbar";
 import "./globals.scss";
 
 const roboto = Poppins({

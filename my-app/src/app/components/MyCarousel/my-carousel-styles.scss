@@ -1,7 +1,13 @@
-@import "../utils/breakpoints.scss";
-@import "../globals.scss";
+@import "@/app/utils/breakpoints.scss";
+@import "@/app/globals.scss";
+
 .react-multi-carousel-list {
   width: 100%;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
 }
 
 .arrow-button-left {
@@ -14,10 +20,11 @@
     &:hover {
       cursor: pointer;
       color: $special-color;
-      transform: scale(1.6); // scale the svg up
+      transform: scale(1.6);
     }
   }
 }
+
 .arrow-button-right {
   margin-right: -10px;
   padding: 0 16px;
@@ -28,7 +35,7 @@
     &:hover {
       cursor: pointer;
       color: $special-color;
-      transform: scale(1.6); // scale the svg up
+      transform: scale(1.6);
     }
   }
 }
@@ -40,7 +47,7 @@
   &::before {
     content: "";
     display: block;
-    padding-top: 100%; /* This will make the height equal to the width */
+    padding-top: 100%;
   }
 
   > * {

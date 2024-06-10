@@ -1,58 +1,43 @@
 // components/Navbar.tsx
 "use client";
 import Link from "next/link";
-import "../styles/Navbar.scss";
-import { ArrowUpRight, List, X, XLg } from "react-bootstrap-icons";
+import "./Navbar.scss";
+import { ArrowUpRight, List, XLg } from "react-bootstrap-icons";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-// import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-
-// Function to determine if a color is light or dark
-// function isLight(color) {
-//   const [r, g, b] = color.match(/\w\w/g).map((c) => parseInt(c, 16));
-//   return 0.2126 * r + 0.7152 * g + 0.0722 * b > 128;
-// }
-
 export default function Navbar() {
+  // HOOKS ---
   const pathname = usePathname();
   const router = useRouter();
-
   const mediumBreakpoint = useMediaQuery("(min-width: 992px)");
 
-  // Find the project that matches the current pathname
-  // const currentProject = projects.find((project) =>
-  //   pathname.includes(project.id)
-  // );
-  // Get the color value of the current project, or default to a fallback color
-  // const backgroundColor = currentProject ? currentProject.color : "black";
-  // const color = isLight(backgroundColor) ? "black" : "white";
-
-  //icon show
+  // STATE ---
   const [showIcon, setShowIcon] = useState(pathname !== "/"); // Set initial state based on pathname
+  const [sidebarOpen, setsidebarOpen] = useState(false);
 
+  // USE EFFECTS ---
   useEffect(() => {
     const handleScroll = () => {
       const show =
         window.scrollY > 0 ||
-        document.documentElement.classList.contains("no-scroll") ||
-        pathname !== "/"; // Add this condition
+        document.documentElement.classList.contains("no-scroll");
       setShowIcon(show);
     };
-
     document.addEventListener("scroll", handleScroll);
     return () => {
       document.removeEventListener("scroll", handleScroll);
     };
-  }, [pathname]);
+  }, []);
 
   useEffect(() => {
     setShowIcon(pathname !== "/");
   }, [pathname]);
 
+  // FUNCTIONS ---
   const onLogoClick = () => {
     setsidebarOpen(false);
     if (pathname === "/") {
@@ -63,12 +48,10 @@ export default function Navbar() {
       });
     } else router.push("/");
   };
-  // NEW SIDEBAR
-  const [sidebarOpen, setsidebarOpen] = useState(false);
 
   return (
     <>
-      <nav className="navbar" style={{ zIndex: 10 }}>
+      <nav className="navbar">
         <div className="navbar-content">
           {showIcon ? (
             <div className="navbar-logo-wrapper" onClick={onLogoClick}>
@@ -80,7 +63,7 @@ export default function Navbar() {
             </div>
           ) : (
             <div />
-          )}{" "}
+          )}
           <ul className="navbar-list-wrapper">
             <li>
               <Link href="/about">
@@ -106,32 +89,23 @@ export default function Navbar() {
               width={30}
               height={30}
               onClick={() => setsidebarOpen(false)}
-              style={{
-                position: "absolute",
-                bottom: "-15",
-                right: "6",
-                visibility: sidebarOpen ? "visible" : "hidden",
-                opacity: sidebarOpen ? 1 : 0,
-                transition: "opacity 0.5s linear",
-              }}
+              className={
+                "sidebar-close-btn" +
+                (sidebarOpen ? " sidebar-close-btn-open" : "")
+              }
             />
             <List
               width={40}
               height={40}
               onClick={() => setsidebarOpen(true)}
-              style={{
-                position: "absolute",
-                bottom: "-21",
-                right: "0",
-                visibility: sidebarOpen ? "hidden" : "visible",
-                opacity: sidebarOpen ? 0 : 1,
-                transition: "opacity 0.5s linear",
-              }}
+              className={
+                "sidebar-list-btn" +
+                (!sidebarOpen ? " sidebar-list-btn-open" : "")
+              }
             />
           </div>
         </div>
       </nav>
-      {/* {isDesktop && ( */}
       <div
         className={`mobile-sidebar ${
           sidebarOpen && !mediumBreakpoint ? "open" : ""

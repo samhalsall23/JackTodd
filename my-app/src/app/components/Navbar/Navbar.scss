@@ -1,5 +1,5 @@
-@import "../utils/breakpoints.scss";
-@import "../globals.scss";
+@import "@/app/utils/breakpoints.scss";
+@import "@/app/globals.scss";
 
 .navbar {
   position: sticky;
@@ -82,6 +82,33 @@
     }
   }
 }
+
+.sidebar-close-btn {
+  position: absolute;
+  bottom: -15px;
+  right: 6px;
+  transition: opacity 0.5s linear;
+  visibility: hidden;
+  opacity: 0;
+  &.sidebar-close-btn-open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.sidebar-list-btn {
+  position: absolute;
+  bottom: -21px;
+  right: 0;
+  transition: opacity 0.5s linear;
+  visibility: hidden;
+  opacity: 0;
+  &.sidebar-list-btn-open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 .sidebar-content-container {
   margin-top: -12vh;
 }
@@ -105,11 +132,6 @@
 .mobile-sidebar {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  // background: radial-gradient(
-  //   circle at 24.1% 68.8%,
-  //   rgb(25, 25, 25) 0%,
-  //   rgb(0, 0, 0) 99.4%
-  // );
   background: black;
   &.open {
     opacity: 1;
