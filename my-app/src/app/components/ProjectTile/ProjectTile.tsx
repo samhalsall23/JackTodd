@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
+
 import { useRouter } from "next/navigation";
-import "../styles/ProjectTile.scss";
+import "./project-tile-styles.scss";
 
 interface ProjectTileProps {
   imageSquare: string;

@@ -1,0 +1,147 @@
+@import "@/app/utils/breakpoints.scss";
+@import "@/app/globals.scss";
+
+.navbar {
+  position: sticky;
+  background: black;
+  top: 0;
+  z-index: 100;
+  min-height: 90px;
+  box-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.103);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 90px;
+}
+.navbar-logo-wrapper {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: map-get($breakpoints, md)) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.navbar-logo {
+  margin: 15px;
+  margin-left: 30px;
+  margin-right: 40px;
+  width: 80px;
+}
+
+.navbar-list-wrapper {
+  display: none;
+
+  @media (min-width: map-get($breakpoints, md)) {
+    display: flex;
+  }
+
+  ul {
+    justify-content: flex-end;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+    padding: 30px 50px;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      span {
+        display: inline-block;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: $special-color;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.sidebar-wrapper {
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  right: 18px;
+  @media (min-width: map-get($breakpoints, md)) {
+    display: none;
+  }
+}
+
+.sidebar-close-btn {
+  position: absolute;
+  bottom: -15px;
+  right: 6px;
+  transition: opacity 0.5s linear;
+  visibility: hidden;
+  opacity: 0;
+  &.sidebar-close-btn-open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.sidebar-list-btn {
+  position: absolute;
+  bottom: -21px;
+  right: 0;
+  transition: opacity 0.5s linear;
+  visibility: hidden;
+  opacity: 0;
+  &.sidebar-list-btn-open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.sidebar-content-container {
+  margin-top: -12vh;
+}
+
+.sidebar-content-item {
+  font-size: 40px;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  @media (min-width: map-get($breakpoints, sm)) {
+    font-size: 60px;
+  }
+  &:hover {
+    color: $special-color;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+  }
+}
+
+.mobile-sidebar {
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  background: black;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 90;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  &.open {
+    opacity: 1;
+    z-index: 2;
+  }
+}

@@ -2,7 +2,7 @@
 
 import { ChevronDown } from "react-bootstrap-icons";
 
-import ProjectTile from "@/app/components/ProjectTile";
+import ProjectTile from "@/app/components/ProjectTile/ProjectTile";
 
 import projects from "@/app/data/projects.json";
 import "./home-styles.scss";

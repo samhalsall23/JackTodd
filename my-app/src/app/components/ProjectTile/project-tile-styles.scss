@@ -1,4 +1,4 @@
-@import "../utils/breakpoints.scss";
+@import "@/app/utils/breakpoints.scss";
 @import "@/app/globals.scss";
 
 .project-tile {
@@ -14,7 +14,7 @@
   cursor: pointer;
   &.project-tile-carousel {
     border-radius: 20px;
-    border: solid white 1px;
+    border: solid #161616ce 1px;
     width: 90%;
     &:hover {
       border: none;

@@ -1,12 +1,21 @@
 **TO DO**
 
-- Clean up components
-- Add 12th project
-- Fix text size everywhere for different window widths
+**MVP**
+
+- text size
+- Mobile height vs view height
+- No scroll with side bar open
+- Contact me links and information correct
+- Update email to send to Jack
+- Add logo to tab and get rid of vercel logo
+
+**NICE TO HAVE**
+
+- documentation
+- Next images
 - Arrows bigger
 - Update email to send to Jack
 - Update LinkedIn, email, instagram
-- Add logo to tab and get rid of vercel logo
 - Animations on load
 
 **Question Log**

@@ -8,7 +8,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 import projects from "@/app/data/projects.json";
-import ProjectTile from "@/app/components/ProjectTile";
+import ProjectTile from "@/app/components/ProjectTile/ProjectTile";
 import "@/app/components/MyCarousel/my-carousel-styles.scss";
 
 // Next Arrow

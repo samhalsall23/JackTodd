@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import ProjectPageContent from "@/app/components/ProjectPageContent";
+import ProjectContent from "@/app/components/ProjectContent/ProjectContent";
 import projects from "@/app/data/projects.json";
-import MyCarousel from "@/app/components/MyCarousel";
+import MyCarousel from "@/app/components/MyCarousel/MyCarousel";
 import "./projects-styles.scss";
 
 type Project = {
@@ -25,11 +25,11 @@ export default function ProjectsFolioPage({ id }: { id: string }) {
       (project) => project.id === id
     );
     setProject(chosenProject || null);
-  }, [project]);
+  }, [project, id]);
 
   return (
     <div className="project-body-container">
-      <ProjectPageContent id={id} />
+      <ProjectContent id={id} />
       <div className="hero-image">
         <img
           className="hero-project-image"

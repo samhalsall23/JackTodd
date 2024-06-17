@@ -1,13 +1,17 @@
-// components/Navbar.tsx
 "use client";
-import Link from "next/link";
-import "./Navbar.scss";
-import { ArrowUpRight, List, XLg } from "react-bootstrap-icons";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+
 import React from "react";
+import { useEffect, useState } from "react";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+
 import useMediaQuery from "@mui/material/useMediaQuery";
+
+import { ArrowUpRight, List, XLg } from "react-bootstrap-icons";
+
+import "./navbar-styles.scss";
 
 export default function Navbar() {
   // HOOKS ---
@@ -110,17 +114,6 @@ export default function Navbar() {
         className={`mobile-sidebar ${
           sidebarOpen && !mediumBreakpoint ? "open" : ""
         }`}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          position: "fixed", // Change from 'absolute' to 'fixed'
-          top: 90, // Change from '100%' to 0
-          left: 0,
-          width: "100%",
-          zIndex: sidebarOpen && !mediumBreakpoint ? 2 : -1, // Increase the z-index
-          height: "100vh",
-        }}
       >
         <div className="sidebar-content-container">
           <Link href={"/"}>
@@ -149,8 +142,6 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-
-      {/* )} */}
     </>
   );
 }
