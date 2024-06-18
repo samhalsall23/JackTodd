@@ -1,6 +1,6 @@
 "use client";
+import React from "react";
 import { useEffect, useState } from "react";
-import ProjectContent from "@/app/components/ProjectContent/ProjectContent";
 import projects from "@/app/data/projects.json";
 import MyCarousel from "@/app/components/MyCarousel/MyCarousel";
 import "./projects-styles.scss";
@@ -29,7 +29,21 @@ export default function ProjectsFolioPage({ id }: { id: string }) {
 
   return (
     <div className="project-body-container">
-      <ProjectContent id={id} />
+      <div>
+        {project && (
+          <>
+            <h1 className="project-heading">{project.title}</h1>
+            <div>
+              {typeof project.description === "string" &&
+                project.description.split("\n").map((line, index) => (
+                  <React.Fragment key={index}>
+                    <p className="project-text">{line}</p>
+                  </React.Fragment>
+                ))}
+            </div>
+          </>
+        )}
+      </div>
       <div className="hero-image">
         <img
           className="hero-project-image"

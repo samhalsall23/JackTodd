@@ -1,4 +1,5 @@
 @import "@/app/utils/breakpoints.scss";
+@import "@/app/utils/font-sizes.scss";
 @import "@/app/globals.scss";
 
 .project-tile {
@@ -49,6 +50,14 @@
 
     h1 {
       text-align: center;
+      font-size: $h-medium;
+    }
+    &-carousel {
+      h1 {
+        @media (max-width: map-get($breakpoints, sm)) {
+          font-size: $h-small;
+        }
+      }
     }
   }
 

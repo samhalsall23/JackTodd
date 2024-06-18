@@ -1,3 +1,4 @@
+@import "@/app/utils/font-sizes.scss";
 @import "@/app/utils/breakpoints.scss";
 @import "@/app/globals.scss";
 
@@ -61,19 +62,19 @@
 }
 
 .contact-header {
-  margin-top: 30px;
+  margin-top: 12px;
   width: 60%;
   @media (max-width: map-get($breakpoints, md)) {
     width: 100%;
   }
   margin-bottom: 30px;
   h1 {
-    font-size: 70px;
-    @media (max-width: map-get($breakpoints, sm)) {
-      font-size: 50px;
+    font-size: $h-extra-large;
+    @media (max-width: map-get($breakpoints, lg)) {
+      font-size: $h-large;
     }
     @media (max-width: map-get($breakpoints, xs)) {
-      font-size: 40px;
+      font-size: $h-medium;
     }
   }
 }
@@ -85,12 +86,19 @@
   margin-bottom: 12px;
   h2 {
     margin-left: 16px;
+    font-size: $p-medium;
+    @media (max-width: map-get($breakpoints, xs)) {
+      font-size: $p-large;
+    }
   }
 }
 
 .contact-info-tile-details {
   p {
-    font-size: 20px;
+    font-size: $p-medium;
+    @media (max-width: map-get($breakpoints, md)) {
+      font-size: $p-small;
+    }
     margin-bottom: 24px;
   }
   hr {
@@ -112,7 +120,10 @@
   }
 
   label {
-    font-size: 20px;
+    font-size: $p-medium;
+    @media (max-width: map-get($breakpoints, xs)) {
+      font-size: $p-small;
+    }
     margin-bottom: 10px;
   }
 
@@ -120,7 +131,7 @@
   textarea {
     font-family: $default-font;
     background-color: white !important;
-    font-size: 18px;
+    font-size: $p-small;
     margin-bottom: 20px;
     border: 2px solid #dddddd;
     width: 100%;
@@ -172,24 +183,24 @@
 .success-submitting-header {
   margin-top: 30px;
   margin-bottom: 20px;
-  font-size: 30px;
+  font-size: $h-medium;
 }
 
 .success-submitting-text {
   margin-bottom: 40px;
-  font-size: 20px;
+  font-size: $p-small;
 }
 
 .error-submitting-header {
   margin-top: 30px;
   margin-bottom: 20px;
-  font-size: 30px;
+  font-size: $h-medium;
   color: red;
 }
 
 .error-submitting-text {
   margin-bottom: 40px;
-  font-size: 20px;
+  font-size: $p-small;
   color: red;
 }
 
@@ -202,7 +213,7 @@
   color: black;
   background-color: #ebe9e9d7;
   border: 1px solid #6d6969d3;
-  font-size: 20px;
+  font-size: $p-medium;
   cursor: pointer;
   transition: 0.3s;
   height: 44px;

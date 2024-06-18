@@ -33,7 +33,12 @@ export default function ProjectTile({
         }}
         onClick={onProjectTileClick}
       >
-        <div className="project-tile-content">
+        <div
+          className={
+            "project-tile-content " +
+            (isCarousel ? "project-tile-content-carousel" : "")
+          }
+        >
           <h1>{title}</h1>
         </div>
       </div>

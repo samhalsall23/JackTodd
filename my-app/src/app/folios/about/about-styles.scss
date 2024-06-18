@@ -1,13 +1,32 @@
+@import "@/app/utils/breakpoints.scss";
+@import "@/app/utils/font-sizes.scss";
+
 .about-container {
+  padding-top: 12px;
   width: 80%;
   margin: auto;
 }
 
-.about-main-content-header {
-  margin-top: 20px;
+.about-heading {
+  font-size: $h-small;
+  @media (min-width: map-get($breakpoints, xs)) {
+    font-size: $h-medium;
+  }
+  margin-bottom: 20px;
 }
 
 .about-view-other-header {
-  margin-top: 28px;
+  margin-top: 20px;
   margin-bottom: 20px;
+  font-size: $h-small;
+  @media (min-width: map-get($breakpoints, xs)) {
+    font-size: $h-medium;
+  }
+}
+
+.about-summary-text {
+  font-size: $p-small;
+  @media (min-width: map-get($breakpoints, xs)) {
+    font-size: $p-medium;
+  }
 }
