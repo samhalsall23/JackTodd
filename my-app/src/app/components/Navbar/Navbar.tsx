@@ -38,6 +38,14 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    if (sidebarOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [sidebarOpen]);
+
+  useEffect(() => {
     setShowIcon(pathname !== "/");
   }, [pathname]);
 

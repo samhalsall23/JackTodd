@@ -50,7 +50,10 @@
 
     h1 {
       text-align: center;
-      font-size: $h-medium;
+      @media (max-width: map-get($breakpoints, lg)) {
+        font-size: $h-medium;
+      }
+      font-size: $h-large;
     }
     &-carousel {
       h1 {

@@ -2,6 +2,10 @@
 @import "@/app/utils/font-sizes.scss";
 @import "@/app/globals.scss";
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .navbar {
   position: sticky;
   background: black;
