@@ -27,10 +27,14 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const show =
+        window.location.pathname !== "/" ||
         window.scrollY > 0 ||
         document.documentElement.classList.contains("no-scroll");
       setShowIcon(show);
     };
+
+    handleScroll();
+
     document.addEventListener("scroll", handleScroll);
     return () => {
       document.removeEventListener("scroll", handleScroll);
@@ -39,9 +43,9 @@ export default function Navbar() {
 
   useEffect(() => {
     if (sidebarOpen) {
-      document.body.classList.add("no-scroll");
+      document.body.classList.add("no-scroll-sidebar");
     } else {
-      document.body.classList.remove("no-scroll");
+      document.body.classList.remove("no-scroll-sidebar");
     }
   }, [sidebarOpen]);
 
