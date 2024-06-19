@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { useRouter } from "next/navigation";
 import "./project-tile-styles.scss";
@@ -22,9 +22,40 @@ export default function ProjectTile({
   const onProjectTileClick = () => {
     router.push(`/projects/${id}`);
   };
+
+  // BELOW TEST
+  const [loadImage, setLoadImage] = useState(false);
+  const tileRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setLoadImage(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: "100px", // Load the image when it comes within 100px of the viewport
+      }
+    );
+
+    if (tileRef.current) {
+      observer.observe(tileRef.current);
+    }
+
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+    };
+  }, []);
+
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div
+        ref={tileRef}
         className={
           "project-tile" + (isCarousel ? " project-tile-carousel" : "")
         }

@@ -2,15 +2,14 @@
 
 **MVP**
 
+- Next images
 - Contact me links and information correct
 - Update email to send to Jack
 
 **NICE TO HAVE**
 
 - documentation
-- Next images
 - Arrows bigger
-- Update LinkedIn, email, instagram
 - Animations on load
 
 **Question Log**
