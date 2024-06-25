@@ -48,6 +48,7 @@ export default function ProjectsFolioPage({ id }: { id: string }) {
       <div className="hero-image">
         {project && (
           <img
+            loading="lazy"
             className="hero-project-image"
             src={project.imageWide}
             alt="Hero Image"
