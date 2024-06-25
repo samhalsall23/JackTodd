@@ -48,17 +48,23 @@ export default function ProjectsFolioPage({ id }: { id: string }) {
       </div>
       <div className="hero-image">
         {project && (
-          <Image
+          <img
             className="hero-project-image"
             src={project.imageWide}
             alt="Hero Image"
-            height={400}
-            width={800}
-            quality={90} // Adjusted for better performance
-            priority // Use this for above-the-fold images only
-            placeholder="blur"
-            blurDataURL="data:image/png;base64,..." // Provide a low-res placeholder
+            loading="lazy"
           />
+          // <Image
+          //   className="hero-project-image"
+          //   src={project.imageWide}
+          //   alt="Hero Image"
+          //   height={400}
+          //   width={800}
+          //   quality={90} // Adjusted for better performance
+          //   priority // Use this for above-the-fold images only
+          //   placeholder="blur"
+          //   blurDataURL="data:image/png;base64,..." // Provide a low-res placeholder
+          // />
         )}
       </div>
       <div className="project-carousel-container">
