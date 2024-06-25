@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 import projects from "@/app/data/projects.json";
 import MyCarousel from "@/app/components/MyCarousel/MyCarousel";
@@ -47,13 +48,16 @@ export default function ProjectsFolioPage({ id }: { id: string }) {
       </div>
       <div className="hero-image">
         {project && (
-          <img
-            loading="lazy"
+          <Image
             className="hero-project-image"
             src={project.imageWide}
             alt="Hero Image"
-            width={800}
             height={400}
+            width={800}
+            quality={90} // Adjusted for better performance
+            priority // Use this for above-the-fold images only
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,..." // Provide a low-res placeholder
           />
         )}
       </div>
