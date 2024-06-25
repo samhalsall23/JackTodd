@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+
 import projects from "@/app/data/projects.json";
 import MyCarousel from "@/app/components/MyCarousel/MyCarousel";
 import "./projects-styles.scss";
@@ -45,11 +47,15 @@ export default function ProjectsFolioPage({ id }: { id: string }) {
         )}
       </div>
       <div className="hero-image">
-        <img
-          className="hero-project-image"
-          src={project?.imageWide}
-          alt="Hero Image"
-        />
+        {project && (
+          <Image
+            className="hero-project-image"
+            src={project.imageWide}
+            alt="Hero Image"
+            width={800}
+            height={400}
+          />
+        )}
       </div>
       <div className="project-carousel-container">
         <h1 className="view-other-projects-heading">View My Other Projects</h1>
