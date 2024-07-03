@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useMemo } from "react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
@@ -18,16 +18,11 @@ type Project = {
 };
 
 export default function ProjectsFolioPage({ id }: { id: string }) {
-  // STATES ---
-  const [project, setProject] = useState<Project | null>(null);
-
-  // HOOKS ---
-  useEffect(() => {
-    const chosenProject: Project | undefined = projects.find(
-      (project) => project.id === id
-    );
-    setProject(chosenProject || null);
-  }, [project, id]);
+  // MEMOS ---
+  const project = useMemo(
+    () => projects.find((project) => project.id === id),
+    [projects, id]
+  );
 
   return (
     <div className="project-body-container">
@@ -48,23 +43,22 @@ export default function ProjectsFolioPage({ id }: { id: string }) {
       </div>
       <div className="hero-image">
         {project && (
-          <img
-            className="hero-project-image"
-            src={project.imageWide}
-            alt="Hero Image"
-            loading="lazy"
-          />
-          // <Image
+          // <img
           //   className="hero-project-image"
           //   src={project.imageWide}
           //   alt="Hero Image"
-          //   height={400}
-          //   width={800}
-          //   quality={90} // Adjusted for better performance
-          //   priority // Use this for above-the-fold images only
-          //   placeholder="blur"
-          //   blurDataURL="data:image/png;base64,..." // Provide a low-res placeholder
+          //   loading="lazy"
           // />
+          <Image
+            className="hero-project-image"
+            src={project.imageWide}
+            alt="Hero Image"
+            height={2616}
+            width={8000}
+            quality={75} // Adjusted for better performance
+            priority // Use this for above-the-fold images only
+            sizes="100vw"
+          />
         )}
       </div>
       <div className="project-carousel-container">
