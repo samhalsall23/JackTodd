@@ -3,6 +3,7 @@
 import { ChevronDown } from "react-bootstrap-icons";
 
 import ProjectTile from "@/app/components/ProjectTile/ProjectTile";
+import Image from "next/image";
 
 import projects from "@/app/data/projects.json";
 import "./home-styles.scss";
@@ -20,9 +21,13 @@ export default function HomeFolioPage() {
   return (
     <main>
       <div className="hero-content">
-        <img
+        <Image
           className="hero-logo"
-          src="assets\logo\WHITELOGO-jack.png"
+          src="/assets/logo/WHITELOGO-jack.png"
+          height={2841}
+          width={6195}
+          quality={75}
+          sizes="70vw"
           alt="logo"
         />
         <div className="hero-text">
