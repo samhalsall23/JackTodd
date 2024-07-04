@@ -13,10 +13,11 @@
   height: 100%;
   display: flex;
   cursor: pointer;
-  &.project-tile-carousel {
+  .project-tile-carousel {
     border-radius: 20px;
     border: solid #161616ce 1px;
     width: 90%;
+    height: 95%;
     &:hover {
       border: none;
     }
