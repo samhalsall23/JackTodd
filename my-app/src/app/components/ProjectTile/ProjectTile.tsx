@@ -12,21 +12,7 @@ interface ProjectTileProps {
   isCarousel?: boolean;
 }
 
-export default function ProjectTile({
-  imageSquare,
-  title,
-  id,
-  isCarousel = false,
-}: ProjectTileProps) {
-  const router = useRouter();
-  const onProjectTileClick = () => {
-    router.push(`/projects/${id}`);
-  };
-
-  // BELOW TEST
-  const [loadImage, setLoadImage] = useState(false);
-  const tileRef = useRef(null);
-
+const useIntersectionObserver = (ref, setLoadImage) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -41,8 +27,8 @@ export default function ProjectTile({
       }
     );
 
-    if (tileRef.current) {
-      observer.observe(tileRef.current);
+    if (ref.current) {
+      observer.observe(ref.current);
     }
 
     return () => {
@@ -50,73 +36,66 @@ export default function ProjectTile({
         observer.disconnect();
       }
     };
-  }, []);
+  }, [ref, setLoadImage]);
+};
+
+export default function ProjectTile({
+  imageSquare,
+  title,
+  id,
+  isCarousel = false,
+}: ProjectTileProps) {
+  const router = useRouter();
+  const onProjectTileClick = () => {
+    router.push(`/projects/${id}`);
+  };
+
+  const [loadImage, setLoadImage] = useState(false);
+  const tileRef = useRef(null);
+
+  useIntersectionObserver(tileRef, setLoadImage);
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      {/* <Image
-        style={{
-          position: "absolute",
-          top: "0",
-          left: "0",
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          zIndex: "0",
-        }}
-        src={imageSquare}
-        alt="Hero Image"
-        height={4167}
-        width={4167}
-        quality={75} // Adjusted for better performance
-        // priority // Use this for above-the-fold images only
-        sizes="(max-width: 480): 100vw,
-                (max-width: 992px): 50vw,
-                33vw"
-        // sizes="100vw"
-      /> */}
       <div
-        // ref={tileRef}
+        ref={tileRef}
         className={"project-tile"}
         style={{
           zIndex: "1",
-          // backgroundImage: `url(${imageSquare})`,
         }}
         onClick={onProjectTileClick}
       >
         <div
-          // className={isCarousel ? "project-tile-content-carousel" : ""}
           style={
             isCarousel
               ? { width: "90%", height: "90%", position: "relative" }
               : { width: "100%", height: "100%", position: "relative" }
           }
         >
-          <Image
-            className={isCarousel ? "project-tile-carousel" : ""}
-            style={{
-              position: "absolute",
-              top: "0",
-              left: "0",
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              zIndex: "-1",
-            }}
-            src={imageSquare}
-            alt="Hero Image"
-            height={4167}
-            width={4167}
-            quality={75} // Adjusted for better performance
-            // priority // Use this for above-the-fold images only
-            sizes={
-              // "100vw"
-              isCarousel
-                ? "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1920px) 33vw, 25vw"
-                : "(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw"
-            }
-            // sizes="100vw"
-          />
+          {loadImage && (
+            <Image
+              className={isCarousel ? "project-tile-carousel" : ""}
+              style={{
+                position: "absolute",
+                top: "0",
+                left: "0",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                zIndex: "-1",
+              }}
+              src={imageSquare}
+              alt="Hero Image"
+              height={4167}
+              width={4167}
+              quality={75} // Adjusted for better performance
+              sizes={
+                isCarousel
+                  ? "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1920px) 33vw, 25vw"
+                  : "(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw"
+              }
+            />
+          )}
           <div
             className={
               "project-tile-content " +
