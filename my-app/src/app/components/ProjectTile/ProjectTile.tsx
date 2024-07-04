@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, MutableRefObject } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import "./project-tile-styles.scss";
@@ -12,7 +12,10 @@ interface ProjectTileProps {
   isCarousel?: boolean;
 }
 
-const useIntersectionObserver = (ref, setLoadImage) => {
+const useIntersectionObserver = (
+  ref: MutableRefObject<HTMLDivElement | null>,
+  setLoadImage: React.Dispatch<React.SetStateAction<boolean>>
+) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
