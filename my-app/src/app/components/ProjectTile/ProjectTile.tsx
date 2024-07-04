@@ -61,7 +61,6 @@ export default function ProjectTile({
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div
-        ref={tileRef}
         className={"project-tile"}
         style={{
           zIndex: "1",
@@ -77,6 +76,7 @@ export default function ProjectTile({
         >
           {loadImage && (
             <Image
+              ref={tileRef}
               className={isCarousel ? "project-tile-carousel" : ""}
               style={{
                 position: "absolute",
