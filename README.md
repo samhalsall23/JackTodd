@@ -3,6 +3,7 @@
 **MVP**
 
 - Next images [x]
+- Add in placeholder images
 - Make logo svg
 - Contact me links and information correct
 - Update email to send to Jack
