@@ -91,6 +91,7 @@ export default function ProjectTile({
               alt="Hero Image"
               height={4167}
               width={4167}
+              loading={"eager"}
               quality={75} // Adjusted for better performance
               sizes={
                 isCarousel
