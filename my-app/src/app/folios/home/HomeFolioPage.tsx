@@ -26,8 +26,9 @@ export default function HomeFolioPage() {
           src="/assets/logo/WHITELOGO-jack.png"
           height={2841}
           width={6195}
-          quality={75}
+          quality={50}
           sizes="70vw"
+          priority={true}
           alt="logo"
         />
         <div className="hero-text">

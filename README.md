@@ -2,7 +2,8 @@
 
 **MVP**
 
-- Next images
+- Next images [x]
+- Make logo svg
 - Contact me links and information correct
 - Update email to send to Jack
 
