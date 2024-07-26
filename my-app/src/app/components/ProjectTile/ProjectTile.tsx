@@ -12,35 +12,35 @@ interface ProjectTileProps {
   isCarousel?: boolean;
 }
 
-const useIntersectionObserver = (
-  ref: MutableRefObject<HTMLDivElement | null>,
-  setLoadImage: React.Dispatch<React.SetStateAction<boolean>>
-) => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          setLoadImage(true);
-          observer.disconnect();
-        }
-      },
-      {
-        rootMargin: "100px", // Load the image when it comes within 100px of the viewport
-      }
-    );
+// const useIntersectionObserver = (
+//   ref: MutableRefObject<HTMLDivElement | null>,
+//   setLoadImage: React.Dispatch<React.SetStateAction<boolean>>
+// ) => {
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       (entries) => {
+//         const [entry] = entries;
+//         if (entry.isIntersecting) {
+//           setLoadImage(true);
+//           observer.disconnect();
+//         }
+//       },
+//       {
+//         rootMargin: "100px", // Load the image when it comes within 100px of the viewport
+//       }
+//     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+//     if (ref.current) {
+//       observer.observe(ref.current);
+//     }
 
-    return () => {
-      if (observer) {
-        observer.disconnect();
-      }
-    };
-  }, [ref, setLoadImage]);
-};
+//     return () => {
+//       if (observer) {
+//         observer.disconnect();
+//       }
+//     };
+//   }, [ref, setLoadImage]);
+// };
 
 export default function ProjectTile({
   imageSquare,
@@ -53,10 +53,10 @@ export default function ProjectTile({
     router.push(`/projects/${id}`);
   };
 
-  const [loadImage, setLoadImage] = useState(false);
+  const [loadImage, setLoadImage] = useState(true);
   const tileRef = useRef(null);
 
-  useIntersectionObserver(tileRef, setLoadImage);
+  // useIntersectionObserver(tileRef, setLoadImage);
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -76,7 +76,7 @@ export default function ProjectTile({
         >
           {loadImage && (
             <Image
-              ref={tileRef}
+              // ref={tileRef}
               className={isCarousel ? "project-tile-carousel" : ""}
               style={{
                 position: "absolute",
