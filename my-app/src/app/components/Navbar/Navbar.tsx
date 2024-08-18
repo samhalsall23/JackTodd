@@ -73,7 +73,7 @@ export default function Navbar() {
             <div className="navbar-logo-wrapper" onClick={onLogoClick}>
               <img
                 className="navbar-logo"
-                src="/assets/logo/WHITELOGO-jack.png"
+                src="/assets/logo/todd.svg"
                 alt="logo"
               />
             </div>
