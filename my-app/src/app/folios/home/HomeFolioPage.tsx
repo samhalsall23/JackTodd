@@ -23,7 +23,7 @@ export default function HomeFolioPage() {
       <div className="hero-content">
         <Image
           className="hero-logo"
-          src="/assets/logo/WHITELOGO-jack.png"
+          src="/assets/logo/todd.svg"
           height={2841}
           width={6195}
           quality={50}

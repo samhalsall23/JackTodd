@@ -26,6 +26,7 @@
 
 .about-summary-text {
   font-size: $p-small;
+  margin-bottom: 12px;
   @media (min-width: map-get($breakpoints, xs)) {
     font-size: $p-medium;
   }

@@ -4,13 +4,23 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 
 export const ContactDetailHorizontalTile = () => {
   return [
-    { heading: "EMAIL", icon: <EmailIcon />, details: "JackTodd@gmail.com" },
-    { heading: "LINKEDIN", icon: <LinkedInIcon />, details: "/JackTodd" },
     {
-      heading: "INSTAGRAM",
-      icon: <InstagramIcon />,
-      details: "@JackToddDesigns",
+      heading: "EMAIL",
+      icon: <EmailIcon />,
+      details: "designtodd1@gmail.com",
+      href: "mailto:someone@example.com",
     },
+    {
+      heading: "LINKEDIN",
+      icon: <LinkedInIcon />,
+      details: "/jacktodd648",
+      href: "https://www.linkedin.com/in/jacktodd648/",
+    },
+    // {
+    //   heading: "INSTAGRAM",
+    //   icon: <InstagramIcon />,
+    //   details: "@JackToddDesigns",
+    // },
   ].map((contactDetail, index) => {
     return (
       <div key={index} className="contact-info-tile">
@@ -19,7 +29,7 @@ export const ContactDetailHorizontalTile = () => {
           <h2>{contactDetail.heading}</h2>
         </div>
         <div className="contact-info-tile-details">
-          <p>{contactDetail.details}</p>
+          <a href={contactDetail.href}>{contactDetail.details}</a>
           <hr />
         </div>
       </div>

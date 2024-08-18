@@ -171,7 +171,9 @@ export default function ContactFolioPage() {
           </div>
         </section>
         <section className="right-section">
-          <div className="contact-info">{<ContactDetailHorizontalTile />}</div>
+          <div className="contact-info">
+            <ContactDetailHorizontalTile />
+          </div>
         </section>
       </main>
       <div className="bottom-page-margin" />

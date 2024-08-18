@@ -94,16 +94,20 @@
 }
 
 .contact-info-tile-details {
-  p {
+  a {
     font-size: $p-medium;
     @media (max-width: map-get($breakpoints, md)) {
       font-size: $p-small;
     }
-    margin-bottom: 24px;
+    &:hover {
+      color: $special-color;
+      cursor: pointer;
+    }
   }
   hr {
     border-top: 1px solid white;
     width: 100%;
+    margin-top: 24px;
     margin-bottom: 24px;
   }
 }
