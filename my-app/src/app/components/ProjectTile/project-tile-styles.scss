@@ -58,6 +58,10 @@
     }
     &-carousel {
       h1 {
+        font-size: $h-large;
+        @media (max-width: map-get($breakpoints, xl)) {
+          font-size: $h-medium;
+        }
         @media (max-width: map-get($breakpoints, sm)) {
           font-size: $h-small;
         }
