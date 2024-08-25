@@ -8,7 +8,7 @@ export const ContactDetailHorizontalTile = () => {
       heading: "EMAIL",
       icon: <EmailIcon />,
       details: "designtodd1@gmail.com",
-      href: "mailto:someone@example.com",
+      href: "mailto:designtodd1@gmail.com",
     },
     {
       heading: "LINKEDIN",
