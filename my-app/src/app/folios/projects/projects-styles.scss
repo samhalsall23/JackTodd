@@ -40,4 +40,20 @@
   width: 100%;
   height: auto;
   border-radius: 20px;
+
+  &.hero-desktop {
+    display: none;
+
+    @media (min-width: map-get($breakpoints, sm)) {
+      display: block;
+    }
+  }
+
+  &.hero-mobile {
+    display: block;
+
+    @media (min-width: map-get($breakpoints, sm)) {
+      display: none;
+    }
+  }
 }
