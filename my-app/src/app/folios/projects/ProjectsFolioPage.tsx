@@ -64,8 +64,6 @@ export default function ProjectsFolioPage({ id }: { id: string }) {
               quality={75} // Adjusted for better performance
               priority // Use this for above-the-fold images only
               sizes="100vw"
-              placeholder="blur"
-              blurDataURL={project.blur}
             />
           </>
         )}
