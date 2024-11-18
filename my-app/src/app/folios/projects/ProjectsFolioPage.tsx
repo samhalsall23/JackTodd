@@ -49,8 +49,8 @@ export default function ProjectsFolioPage({ id }: { id: string }) {
               alt="Hero Image"
               height={2616}
               width={8000}
-              quality={75} // Adjusted for better performance
-              priority // Use this for above-the-fold images only
+              quality={75}
+              priority
               sizes="100vw"
               placeholder="blur"
               blurDataURL={project.blur}
@@ -61,8 +61,8 @@ export default function ProjectsFolioPage({ id }: { id: string }) {
               alt="Hero Image"
               height={4879}
               width={2917}
-              quality={75} // Adjusted for better performance
-              priority // Use this for above-the-fold images only
+              quality={75}
+              priority
               sizes="100vw"
             />
           </>

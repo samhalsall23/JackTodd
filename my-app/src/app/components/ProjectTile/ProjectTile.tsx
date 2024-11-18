@@ -12,36 +12,6 @@ interface ProjectTileProps {
   isCarousel?: boolean;
 }
 
-// const useIntersectionObserver = (
-//   ref: MutableRefObject<HTMLDivElement | null>,
-//   setLoadImage: React.Dispatch<React.SetStateAction<boolean>>
-// ) => {
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       (entries) => {
-//         const [entry] = entries;
-//         if (entry.isIntersecting) {
-//           setLoadImage(true);
-//           observer.disconnect();
-//         }
-//       },
-//       {
-//         rootMargin: "100px", // Load the image when it comes within 100px of the viewport
-//       }
-//     );
-
-//     if (ref.current) {
-//       observer.observe(ref.current);
-//     }
-
-//     return () => {
-//       if (observer) {
-//         observer.disconnect();
-//       }
-//     };
-//   }, [ref, setLoadImage]);
-// };
-
 export default function ProjectTile({
   imageSquare,
   title,
@@ -55,8 +25,6 @@ export default function ProjectTile({
 
   const [loadImage, setLoadImage] = useState(true);
   const tileRef = useRef(null);
-
-  // useIntersectionObserver(tileRef, setLoadImage);
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -76,7 +44,6 @@ export default function ProjectTile({
         >
           {loadImage && (
             <Image
-              // ref={tileRef}
               className={isCarousel ? "project-tile-carousel" : ""}
               style={{
                 position: "absolute",
@@ -92,7 +59,7 @@ export default function ProjectTile({
               height={4167}
               width={4167}
               loading={"eager"}
-              quality={75} // Adjusted for better performance
+              quality={75}
               sizes={
                 isCarousel
                   ? "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1920px) 33vw, 25vw"
