@@ -6,15 +6,6 @@ import projects from "@/app/data/projects.json";
 import MyCarousel from "@/app/components/MyCarousel/MyCarousel";
 import "./projects-styles.scss";
 
-type Project = {
-  index: number;
-  id: string;
-  title: string;
-  imageSquare: string;
-  imageWide: string;
-  description: string;
-  color: string;
-};
 
 export default function ProjectsFolioPage({ id }: { id: string }) {
   // MEMOS ---
